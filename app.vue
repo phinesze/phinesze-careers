@@ -1,0 +1,14 @@
+<template>
+  <div>
+    <table>
+      <thead>職務経歴書</thead>
+      <tbody>
+        <tr>
+          <th>自己PR</th>
+          <td>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
