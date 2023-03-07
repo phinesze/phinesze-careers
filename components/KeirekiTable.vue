@@ -3,7 +3,7 @@
     <caption>職務経歴書</caption>
     <tbody>
     <tr>
-      <td>自己PR</td>
+      <th>自己PR</th>
       <td>
         {{pr}}
       </td>
@@ -24,5 +24,15 @@ export default {
 </script>
 
 <style scoped>
-
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+table th, table td {
+  border: 1px solid;
+  padding: 8px;
+}
+table th {
+  background: lightgray;
+}
 </style>
