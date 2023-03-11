@@ -3,9 +3,16 @@
     <caption>職務経歴書</caption>
     <tbody>
     <tr>
-      <th>自己PR</th>
-      <td>
+      <th class="p-4">自己PR</th>
+      <td class="p-4">
         <ContentDoc path="/about"/>
+      </td>
+    </tr>
+    <tr>
+      <td class="!p-0" colspan="2">
+        <div class="-m-[1px] w-[calc(100%_+_2px)]">
+          <KeirekiDetailTable />
+        </div>
       </td>
     </tr>
     </tbody>
@@ -17,17 +24,3 @@ export default {
   name: "KeirekiTable"
 }
 </script>
-
-<style scoped>
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-table th, table td {
-  border: 1px solid;
-  padding: 8px;
-}
-table th {
-  background: lightgray;
-}
-</style>

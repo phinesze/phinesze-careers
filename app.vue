@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <PrintingPage>
     <KeirekiTable />
-  </div>
+  </PrintingPage>
 </template>
