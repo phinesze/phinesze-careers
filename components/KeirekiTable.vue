@@ -5,22 +5,17 @@
     <tr>
       <th>自己PR</th>
       <td>
-        {{pr}}
+        <ContentDoc path="/about"/>
       </td>
     </tr>
     </tbody>
   </table>
 </template>
 
-<script setup lang="ts">
-const pr: string = 'PR内容';
-</script>
-
 <script lang="ts">
 export default {
   name: "KeirekiTable"
 }
-
 </script>
 
 <style scoped>
