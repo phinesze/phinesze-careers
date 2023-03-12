@@ -1,5 +1,5 @@
 <template>
-  <PrintingPage>
+  <NuxtLayout>
     <KeirekiTable />
-  </PrintingPage>
+  </NuxtLayout>
 </template>
