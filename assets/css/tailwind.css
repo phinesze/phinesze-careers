@@ -3,30 +3,34 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        font-size: 2.5mm;
-    }
-    body {
-        box-sizing: border-box;
-    }
+  :root {
+    font-size: 2.5mm;
+  }
+  body {
+    box-sizing: border-box;
+  }
 
-    table, thead, tbody, tr, th, td {
-        @apply box-border;
-    }
-    table {
-        @apply w-full;
-    }
-    table th, table td {
-        @apply border border-black p-2;
-    }
-    table th {
-        @apply bg-gray-300;
-    }
+  table,
+  thead,
+  tbody,
+  tr,
+  th,
+  td {
+    @apply box-border;
+  }
+  table {
+    @apply w-full;
+  }
+  table th,
+  table td {
+    @apply border border-black p-2;
+  }
+  table th {
+    @apply bg-gray-300;
+  }
 
-    @page {
-        size: A4 portrait;
-        margin: 0mm;
-    }
-
-
+  @page {
+    size: A4 portrait;
+    margin: 0mm;
+  }
 }
