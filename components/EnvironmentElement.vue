@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { careers } from "~/constants/careers";
 
+type EnvironmentElement = string | [string, { version?: number | string }?];
+
 const props = defineProps<{
-  element: string | [string, { version?: number | string }?];
+  element: EnvironmentElement;
 }>();
 
 const elementName = computed(() => {
