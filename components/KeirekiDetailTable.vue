@@ -51,9 +51,9 @@ import { careers } from "~/constants/careers";
           <th>チーム人数</th>
         </tr>
         <tr>
-          <td>
-            <ul>
-              <li v-for="(teamNumber, team) in career.teams" :key="name">
+          <td class="text-center">
+            <ul class="inline-block w-fit">
+              <li v-for="(teamNumber, team) in career.teams" :key="name" class="text-left">
                 {{ team }}: <TeamNumberLabel :value="teamNumber" />
               </li>
             </ul>
