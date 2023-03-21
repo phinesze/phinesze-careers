@@ -17,7 +17,7 @@ import { careers } from "~/constants/careers";
           <td rowspan="2">{{ company.company }}</td>
           <td rowspan="2">#{{ career.id }}</td>
           <th class="p-2">期間</th>
-          <td class="p-2">{{ career.title }}</td>
+          <td class="font-bold p-2">{{ career.title }}</td>
           <th class="p-2">言語・フレームワーク</th>
         </tr>
         <tr>
