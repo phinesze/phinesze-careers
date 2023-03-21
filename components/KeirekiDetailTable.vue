@@ -26,10 +26,7 @@ import { careers } from "~/constants/careers";
         </tr>
         <tr>
           <td>
-            <template v-if="career.times">
-              <IntervalDate :value="career.times.start" />〜
-              <IntervalDate :value="career.times.end" />
-            </template>
+            <IntervalDateLabel v-if="career.times" :value="career.times" />
           </td>
           <td class="align-top">
             <MarkdownDocument :path="`/careers/${career.id}`" />
