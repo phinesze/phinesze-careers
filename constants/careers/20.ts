@@ -4,7 +4,6 @@ export const career20 = {
   times: {
     start: "2022-11",
   },
-  teams: {},
   environments: {
     フロントエンド: ["TypeScript", "React", "Next.js", "Tailwind css", "Jest"],
     バックエンド: ["PHP", "Laravel", "MongoDB"],
