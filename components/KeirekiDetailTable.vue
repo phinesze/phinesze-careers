@@ -5,15 +5,15 @@ import { careers } from "~/constants/careers";
 <template>
   <table>
     <colgroup>
-      <col class="w-[8mm]">
-      <col class="w-0.5 w-[8mm]">
-      <col class="w-[22mm]">
-      <col class="w-[auto]">
-      <col class="w-[60mm]">
+      <col class="w-[8mm]" />
+      <col class="w-0.5 w-[8mm]" />
+      <col class="w-[22mm]" />
+      <col class="w-[auto]" />
+      <col class="w-[60mm]" />
     </colgroup>
     <template v-for="company in careers">
-      <template v-for="career in company.careers">
-        <tr style="">
+      <template v-for="career in company.careers" :key="career.id">
+        <tr>
           <td rowspan="2">{{ company.company }}</td>
           <td rowspan="2">#{{ career.id }}</td>
           <th class="p-2">期間</th>
@@ -34,11 +34,12 @@ import { careers } from "~/constants/careers";
           </td>
           <td class="align-top">
             <ul>
-              <li v-for="(elements, name) in career.environments">
+              <li v-for="(elements, name) in career.environments" :key="name">
                 <p class="font-bold">{{ name }}</p>
                 <div>
                   <EnvironmentElement
                     v-for="element in elements"
+                    :key="element"
                     :element="element"
                     class="mr-2 after:content-[','] last:after:content-none"
                   />
@@ -51,3 +52,14 @@ import { careers } from "~/constants/careers";
     </template>
   </table>
 </template>
+
+<style lang="css">
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold;
+}
+</style>
