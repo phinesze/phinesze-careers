@@ -29,7 +29,7 @@ import { careers } from "~/constants/careers";
               </div>
             </template>
           </td>
-          <td>
+          <td class="align-top">
             <ContentDoc :path="`/careers/${career.id}`" />
           </td>
           <td class="align-top">
