@@ -10,7 +10,7 @@ export const career05 = {
   },
   environments: {
     OS: [["Cent OS", { version: 6 }]],
-    言語: ["HTML5、 CSS3、 JavaScript、 jQuery"],
+    言語: ["HTML5", "CSS3", "JavaScript", "jQuery"],
     DB: ["MySQL"],
   },
 };

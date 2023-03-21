@@ -23,7 +23,7 @@ export const career15 = {
     ],
     バックエンド: [
       "TypeScript",
-      "Google loud Platform、Firebase Authentication、Cloud Functions",
+      "Google loud Platform", "Firebase Authentication", "Cloud Functions",
       "Google Spanner",
     ],
     その他: [
