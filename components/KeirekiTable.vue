@@ -7,7 +7,7 @@
       <tr>
         <th class="p-4">自己PR</th>
         <td class="p-4">
-          <ContentDoc path="/about" />
+          <MarkdownDocument path="/about" />
         </td>
       </tr>
       <tr>

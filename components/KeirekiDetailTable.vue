@@ -30,7 +30,7 @@ import { careers } from "~/constants/careers";
             </template>
           </td>
           <td class="align-top">
-            <ContentDoc :path="`/careers/${career.id}`" />
+            <MarkdownDocument :path="`/careers/${career.id}`" />
           </td>
           <td class="align-top">
             <ul>
@@ -52,14 +52,3 @@ import { careers } from "~/constants/careers";
     </template>
   </table>
 </template>
-
-<style lang="css">
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-bold;
-}
-</style>
