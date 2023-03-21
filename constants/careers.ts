@@ -62,6 +62,6 @@ export const careers = [
   },
   {
     company: "A社",
-    careers: [career01, career02, career03, career04, career05, career06],
+    careers: [career06, career05, career04, career03, career02, career01],
   },
 ];
