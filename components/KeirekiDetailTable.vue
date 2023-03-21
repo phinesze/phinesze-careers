@@ -3,13 +3,13 @@ import { careers } from "~/constants/careers";
 </script>
 
 <template>
-  <table>
+  <table class="table-fixed">
     <colgroup>
       <col class="w-[8mm] bg-gray-400" />
       <col class="w-0.5 w-[8mm] bg-lime-300" />
-      <col class="w-[22mm]" />
+      <col class="w-[21mm]" />
       <col class="w-[auto]" />
-      <col class="w-[60mm]" />
+      <col class="w-[50mm]" />
     </colgroup>
     <template v-for="company in careers">
       <template v-for="career in company.careers" :key="career.id">
