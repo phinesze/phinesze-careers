@@ -23,7 +23,7 @@ import { careers } from "~/constants/careers";
             </template>
           </td>
           <td>
-            システム概要
+            <ContentDoc :path="`/careers/${career.id}`" />
           </td>
           <td>
             <ul>
