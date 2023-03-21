@@ -14,7 +14,7 @@
           <MarkdownDocument path="/about" />
         </td>
       </tr>
-      <tr class="break-after-page">
+      <tr>
         <th class="p-4">補足</th>
         <td class="p-4">
           <MarkdownDocument path="/supplement" />

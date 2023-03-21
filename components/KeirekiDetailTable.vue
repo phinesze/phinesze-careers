@@ -12,8 +12,12 @@ import { careers } from "~/constants/careers";
       <col class="w-[50mm]" />
     </colgroup>
     <template v-for="company in careers">
-      <template v-for="career in company.careers" :key="career.id">
-        <tr class="career-row break-before-auto">
+      <tbody
+        v-for="career in company.careers"
+        :key="career.id"
+        class="career-row break-inside-avoid"
+      >
+        <tr>
           <td class="bg-gray-400" rowspan="2">{{ company.company }}</td>
           <td class="bg-lime-300" rowspan="2">#{{ career.id }}</td>
           <th class="p-2">期間</th>
@@ -46,7 +50,7 @@ import { careers } from "~/constants/careers";
             </ul>
           </td>
         </tr>
-      </template>
+      </tbody>
     </template>
   </table>
 </template>
