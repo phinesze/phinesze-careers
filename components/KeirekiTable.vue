@@ -14,6 +14,12 @@
           <MarkdownDocument path="/about" />
         </td>
       </tr>
+      <tr class="break-after-page">
+        <th class="p-4">補足</th>
+        <td class="p-4">
+          <MarkdownDocument path="/supplement" />
+        </td>
+      </tr>
       <tr>
         <td class="!p-0" colspan="2">
           <div class="-m-[1px] w-[calc(100%_+_2px)]">
