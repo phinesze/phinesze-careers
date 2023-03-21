@@ -23,10 +23,8 @@ import { careers } from "~/constants/careers";
         <tr>
           <td>
             <template v-if="career.times">
-              <div v-if="career.times.start">{{ career.times.start }} ~</div>
-              <div v-if="career.times.end">
-                {{ career.times.end }}
-              </div>
+              <IntervalDate :value="career.times.start" />〜
+              <IntervalDate :value="career.times.end" />
             </template>
           </td>
           <td class="align-top">
