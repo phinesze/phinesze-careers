@@ -9,7 +9,7 @@ Vue.js、Nuxt.js, React に関しましては業務もしくは個人開発で�
 Vue.js（メイン）、Nuxt.js、React、npm、yarn、ESLint、Prettier、stylelint、Sass、dotenv、husky、jest、webpack
 
 その他のスキル・経験など
-・Linux サーバーの構築、AWS EC2 を使用したサーバーの立ち上げ、Docker と DockerCompose を使用したコンテナの構築
+ - Linux サーバーの構築、AWS EC2 を使用したサーバーの立ち上げ、Docker と DockerCompose を使用したコンテナの構築
 git リポジトリ: github、gitlab、bitcuket など
 
 コーディングをする際のソースコードの書き方には気を配っており、DRY 原則や関心の分離(SoC)には十分注意を払って書いております。
