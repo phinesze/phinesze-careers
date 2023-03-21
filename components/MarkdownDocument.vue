@@ -1,0 +1,27 @@
+<script setup lang="ts">
+defineProps<{
+  path: string;
+}>();
+</script>
+
+<template>
+  <section>
+    <ContentDoc :path="path" />
+  </section>
+</template>
+
+<style scoped lang="scss">
+:deep {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+  li {
+    @apply list-inside list-disc;
+  }
+}
+</style>
