@@ -6,7 +6,7 @@ export const career03 = {
     end: "2015-09",
   },
   teams: {
-    チーム: 3,
+    全体: 3,
   },
   environments: {
     言語: ["HTML5", "CSS3", "JavaScript", "jQuery"],

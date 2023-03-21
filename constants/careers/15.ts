@@ -7,7 +7,7 @@ export const career15 = {
     end: "2021-08",
   },
   teams: {
-    チーム: 4,
+    全体: 4,
   },
   environments: {
     フロントエンド: [

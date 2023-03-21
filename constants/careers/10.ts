@@ -6,7 +6,7 @@ export const career10 = {
     end: "2019-10",
   },
   teams: {
-    チーム: 8,
+    全体: 8,
   },
   environments: {
     フロントエンド: ["TypeScript", ["Angular", { version: "6" }]],

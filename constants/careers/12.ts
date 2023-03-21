@@ -6,7 +6,7 @@ export const career12 = {
     end: "2020-05",
   },
   teams: {
-    チーム: 3,
+    全体: 3,
   },
   environments: {
     フロントエンド: ["JavaScript", " Node.js", "Vue.js", "Nuxt.js"],

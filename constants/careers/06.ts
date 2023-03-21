@@ -6,7 +6,7 @@ export const career06 = {
     end: "2017-07-09",
   },
   teams: {
-    チーム: 3,
+    全体: 3,
   },
   environments: {
     OS: ["Windows Server 2008"],

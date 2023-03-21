@@ -6,7 +6,7 @@ export const career01 = {
     end: "2015-03",
   },
   teams: {
-    チーム: 3,
+    全体: 3,
   },
   environments: {
     OS: [["Cent OS", { version: 6 }]],

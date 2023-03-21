@@ -6,7 +6,7 @@ export const career08 = {
     end: "2018-10",
   },
   teams: {
-    チーム: 10,
+    全体: 10,
   },
   environments: {
     OS: ["Windows Server"],
