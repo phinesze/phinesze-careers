@@ -23,7 +23,6 @@ export const career18 = {
       "1dColor",
       "themeleaf",
     ],
-    バックエンド: [],
     その他: ["docker"],
   },
 };
