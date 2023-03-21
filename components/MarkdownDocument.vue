@@ -30,7 +30,7 @@ defineProps<{
     }
   }
   p {
-    @apply break-inside-avoid;
+    @apply break-inside-avoid mb-[1em];
   }
 }
 </style>
