@@ -20,9 +20,3 @@
     </tbody>
   </table>
 </template>
-
-<script lang="ts">
-export default {
-  name: "KeirekiTable",
-};
-</script>
