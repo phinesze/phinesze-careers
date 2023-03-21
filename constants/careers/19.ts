@@ -3,7 +3,7 @@ export const career19 = {
   title: "グループ社内で使用するデータディレクトリシステムの開発",
   times: {
     start: "2022-04",
-    end: "2022-03",
+    end: "2023-03",
   },
   teams: {
     PM: 2,
