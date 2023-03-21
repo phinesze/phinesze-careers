@@ -33,7 +33,7 @@ import { careers } from "~/constants/careers";
           </td>
           <td class="align-top" rowspan="3">
             <ul>
-              <li v-for="(elements, name) in career.environments" :key="name">
+              <li v-for="(elements, name) in career.environments" :key="name" class="mb-3">
                 <p class="font-bold">{{ name }}</p>
                 <div>
                   <EnvironmentElementLabel
@@ -47,10 +47,10 @@ import { careers } from "~/constants/careers";
             </ul>
           </td>
         </tr>
-        <tr class="h-10">
+        <tr v-if="career.teams" class="h-10">
           <th>チーム人数</th>
         </tr>
-        <tr>
+        <tr v-if="career.teams">
           <td class="text-center">
             <ul class="inline-block w-fit">
               <li v-for="(teamNumber, team) in career.teams" :key="name" class="text-left">
