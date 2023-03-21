@@ -36,7 +36,7 @@ import { careers } from "~/constants/careers";
               <li v-for="(elements, name) in career.environments" :key="name">
                 <p class="font-bold">{{ name }}</p>
                 <div>
-                  <EnvironmentElement
+                  <EnvironmentElementLabel
                     v-for="element in elements"
                     :key="element"
                     :element="element"
