@@ -33,6 +33,7 @@ import { careers } from "~/constants/careers";
                   <EnvironmentElement
                     v-for="element in elements"
                     :element="element"
+                    class="mr-2 after:content-[','] last:after:content-none"
                   />
                 </div>
               </li>

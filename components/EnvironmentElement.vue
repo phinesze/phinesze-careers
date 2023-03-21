@@ -17,7 +17,7 @@ const elementOptions = computed(() => {
 </script>
 
 <template>
-  <div class="inline mr-2">
+  <div class="inline">
     <span>{{ elementName }}</span>
     <template v-if="elementOptions">
       <i v-if="elementOptions.version"> v{{ elementOptions.version }} </i>
