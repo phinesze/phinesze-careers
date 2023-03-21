@@ -19,12 +19,18 @@ defineProps<{
   h5,
   h6 {
     @apply font-bold;
+    &:not(:first-child) {
+      @apply mt-[1em]; 
+    }
   }
   li {
     &:before {
       display: inline;
       content: '・';
     }
+  }
+  p {
+    @apply break-inside-avoid;
   }
 }
 </style>
