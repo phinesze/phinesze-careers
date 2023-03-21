@@ -18,8 +18,8 @@ import { careers } from "~/constants/careers";
         class="career-row break-inside-avoid"
       >
         <tr>
-          <td class="bg-gray-400" rowspan="2">{{ company.company }}</td>
-          <td class="bg-lime-300" rowspan="2">#{{ career.id }}</td>
+          <td class="bg-gray-400" rowspan="4">{{ company.company }}</td>
+          <td class="bg-lime-300" rowspan="4">#{{ career.id }}</td>
           <th class="p-2">期間</th>
           <td class="font-bold p-2 bg-cyan-100">{{ career.title }}</td>
           <th class="p-2">言語・フレームワーク</th>
@@ -28,10 +28,10 @@ import { careers } from "~/constants/careers";
           <td>
             <IntervalDateLabel v-if="career.times" :value="career.times" />
           </td>
-          <td class="align-top">
+          <td class="align-top" rowspan="3">
             <MarkdownDocument :path="`/careers/${career.id}`" />
           </td>
-          <td class="align-top">
+          <td class="align-top" rowspan="3">
             <ul>
               <li v-for="(elements, name) in career.environments" :key="name">
                 <p class="font-bold">{{ name }}</p>
@@ -43,6 +43,18 @@ import { careers } from "~/constants/careers";
                     class="mr-2 after:content-[','] last:after:content-none"
                   />
                 </div>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr class="h-10">
+          <th>チーム人数</th>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li v-for="(teamNumber, team) in career.teams" :key="name">
+                {{ team }}: <TeamNumberLabel :value="teamNumber" />
               </li>
             </ul>
           </td>
