@@ -21,7 +21,10 @@ defineProps<{
     @apply font-bold;
   }
   li {
-    @apply list-inside list-disc;
+    &:before {
+      display: inline;
+      content: '・';
+    }
   }
 }
 </style>
