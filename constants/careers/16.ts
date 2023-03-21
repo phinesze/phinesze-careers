@@ -1,4 +1,5 @@
 export const career16 = {
+  id: 16,
   title: "既存ファッションECサイトの開発",
   times: {
     start: "2021-07-01",

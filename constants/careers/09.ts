@@ -1,4 +1,5 @@
 export const career09 = {
+  id: 9,
   title: "中古車ECサイト/Webアプリケーション運用保守",
   times: {
     start: "2018-11-01",

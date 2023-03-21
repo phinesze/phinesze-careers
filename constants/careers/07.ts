@@ -1,4 +1,5 @@
 export const career07 = {
+  id: 7,
   title: "ネット診断サービス/Webアプリケーション改修",
   times: {
     start: "2018-03-01",

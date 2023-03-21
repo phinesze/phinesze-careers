@@ -1,4 +1,5 @@
 export const career11 = {
+  id: 11,
   title: "大手求人ウェブサイトのフロントエンド開発・運用",
   times: {
     start: "2019-11-01",

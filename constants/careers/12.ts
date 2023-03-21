@@ -1,4 +1,5 @@
 export const career12 = {
+  id: 12,
   title: "VR空間共有サービスにおけるフロントエンド／バックエンドの開発",
   times: {
     start: "2020-04-01",

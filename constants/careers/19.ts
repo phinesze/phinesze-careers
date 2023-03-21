@@ -1,4 +1,5 @@
 export const career19 = {
+  id: 19,
   title: "グループ社内で使用するデータディレクトリシステムの開発",
   times: {
     start: "2022-04-01",

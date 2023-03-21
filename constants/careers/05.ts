@@ -1,4 +1,5 @@
 export const career05 = {
+  id: 5,
   title: "アジア向け仕事紹介クラウドソーシングサービスの自社開発",
   times: {
     start: "2016-04-1",

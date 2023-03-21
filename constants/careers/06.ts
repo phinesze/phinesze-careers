@@ -1,4 +1,5 @@
 export const career06 = {
+  id: 6,
   title: "大手電子部品メーカー/社内用健康保険システムの新規開発",
   times: {
     start: "2017-07-07",

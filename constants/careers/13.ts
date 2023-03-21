@@ -1,4 +1,5 @@
 export const career13 = {
+  id: 13,
   title: "住宅注文システムなどのフロントエンド／バックエンドの開発",
   times: {
     start: "2020-06-01",

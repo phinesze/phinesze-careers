@@ -1,4 +1,5 @@
 export const career18 = {
+  id: 18,
   title:
     "不動産仲介サービスの開発と健康機器メーカーのアンケートウェブサイトの制作",
   times: {
