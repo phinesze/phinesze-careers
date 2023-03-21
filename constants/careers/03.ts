@@ -2,8 +2,8 @@ export const career03 = {
   id: 3,
   title: "企業ウェブサイトの新規開発",
   times: {
-    start: "2015-04-01",
-    end: "2015-09-30",
+    start: "2015-04",
+    end: "2015-09",
   },
   teams: {
     チーム: 3,

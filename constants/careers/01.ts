@@ -2,8 +2,8 @@ export const career01 = {
   id: 1,
   title: "Web会計アプリケーションの開発及び改修（自社開発）",
   times: {
-    start: "2013-08-01",
-    end: "2015-03-31",
+    start: "2013-08",
+    end: "2015-03",
   },
   teams: {
     チーム: 3,

@@ -2,8 +2,8 @@ export const career16 = {
   id: 16,
   title: "既存ファッションECサイトの開発",
   times: {
-    start: "2021-07-01",
-    end: "2021-08-31",
+    start: "2021-07",
+    end: "2021-08",
   },
   teams: {
     チーム: 3,

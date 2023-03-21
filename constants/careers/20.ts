@@ -2,7 +2,7 @@ export const career20 = {
   id: 20,
   title: "データ活用のマーケティングツールの開発",
   times: {
-    start: "2022-11-01",
+    start: "2022-11",
   },
   teams: {},
   environments: {

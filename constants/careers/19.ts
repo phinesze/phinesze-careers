@@ -2,8 +2,8 @@ export const career19 = {
   id: 19,
   title: "グループ社内で使用するデータディレクトリシステムの開発",
   times: {
-    start: "2022-04-01",
-    end: "2022-03-31",
+    start: "2022-04",
+    end: "2022-03",
   },
   teams: {
     PM: 2,

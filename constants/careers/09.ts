@@ -2,8 +2,8 @@ export const career09 = {
   id: 9,
   title: "中古車ECサイト/Webアプリケーション運用保守",
   times: {
-    start: "2018-11-01",
-    end: "2018-12-31",
+    start: "2018-11",
+    end: "2018-12",
   },
   teams: {
     チーム: 8,

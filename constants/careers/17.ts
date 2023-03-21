@@ -2,8 +2,8 @@ export const career17 = {
   id: 17,
   title: "地方自治体をエンドユーザーとする交通・人流分析WEBアプリの開発",
   times: {
-    start: "2021-09-01",
-    end: "2022-01-31",
+    start: "2021-09",
+    end: "2022-01",
   },
   teams: {
     PM: 2,
