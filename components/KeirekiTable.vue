@@ -20,13 +20,6 @@
           <MarkdownDocument path="/supplement" />
         </td>
       </tr>
-      <tr>
-        <td class="!p-0" colspan="2">
-          <div class="-m-[1px] w-[calc(100%_+_2px)]">
-            <KeirekiDetailTable />
-          </div>
-        </td>
-      </tr>
     </tbody>
   </table>
 </template>
