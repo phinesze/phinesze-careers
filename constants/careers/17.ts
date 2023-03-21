@@ -18,11 +18,12 @@ export const career17 = {
       "Mapbox",
       "ESLint",
       "Prettier",
+      "Stylelint",
       "Sass",
       " axios",
       "Vue Composition Api",
     ],
-    バックエンド: [],
+    バックエンド: ["PostgresSQL"],
     その他: ["docker"],
   },
 };
