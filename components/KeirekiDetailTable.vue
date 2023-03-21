@@ -4,6 +4,13 @@ import { careers } from "~/constants/careers";
 
 <template>
   <table>
+    <colgroup>
+      <col class="w-[8mm]">
+      <col class="w-0.5 w-[8mm]">
+      <col class="w-[22mm]">
+      <col class="w-[auto]">
+      <col class="w-[60mm]">
+    </colgroup>
     <template v-for="company in careers">
       <template v-for="career in company.careers">
         <tr style="">
@@ -25,7 +32,7 @@ import { careers } from "~/constants/careers";
           <td>
             <ContentDoc :path="`/careers/${career.id}`" />
           </td>
-          <td>
+          <td class="align-top">
             <ul>
               <li v-for="(elements, name) in career.environments">
                 <p class="font-bold">{{ name }}</p>
