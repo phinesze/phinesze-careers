@@ -5,7 +5,7 @@ const props = defineProps<{
 
 const dateString = computed(() => {
   if (props.value) {
-    const [year, month, date] = props.value.split("-");
+    const [year, month] = props.value.split("-");
     return `${Number(year)}年${Number(month)}月`;
   } else {
     return null;
