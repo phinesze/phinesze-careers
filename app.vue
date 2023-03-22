@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout>
-    <KeirekiTable/>
+    <KeirekiTable />
     <KeirekiDetailTable />
     <SupplementTable class="break-before-page" />
   </NuxtLayout>

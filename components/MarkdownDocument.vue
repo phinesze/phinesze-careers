@@ -20,13 +20,13 @@ defineProps<{
   h6 {
     @apply font-bold;
     &:not(:first-child) {
-      @apply mt-[1em]; 
+      @apply mt-[1em];
     }
   }
   li {
     &:before {
       display: inline;
-      content: '・';
+      content: "・";
     }
   }
   p {
