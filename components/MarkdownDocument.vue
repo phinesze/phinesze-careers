@@ -23,6 +23,9 @@ defineProps<{
       @apply mt-[1em];
     }
   }
+  h1, h2, h3 {
+    @apply text-2xl;
+  }
   li {
     &:before {
       display: inline;
