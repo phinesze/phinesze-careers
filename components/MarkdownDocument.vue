@@ -6,7 +6,7 @@ defineProps<{
 
 <template>
   <section>
-    <ContentDoc :path="path" />
+    <ContentDoc :path="path" :head="false" />
   </section>
 </template>
 
