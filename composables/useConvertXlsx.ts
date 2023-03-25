@@ -11,6 +11,15 @@ const getverticalAlignment = (verticalAlign: string) => {
   return verticalAlignMap[verticalAlign] ?? "top";
 };
 
+const convertColor = (backgroundColor: string) => {
+  const rgb = backgroundColor.match(/\d+/ig) ?? [];
+  const [r, g, b] = rgb.map((num) => {
+    return Number(num).toString(16).padStart(2, "0");
+  });
+  const color = `${r}${g}${b}`;
+  return color;
+};
+
 export const useConvertToXlsx = () => {
 
   /**
@@ -28,14 +37,7 @@ export const useConvertToXlsx = () => {
 
     //  backgroundColor
     if (cellStyle.backgroundColor) {
-      console.log("==== style backgroundColor", cellStyle.backgroundColor);
-      const rgb = cellStyle.backgroundColor.match(/\d+/ig) ?? [];
-      const [r, g, b] = rgb.map((num) => {
-        return Number(num).toString(16).padStart(2, "0");
-      });
-      const color = `${r}${g}${b}`;
-      console.log("==== color", color);
-      s["fill"] = { fgColor: { rgb: color } };
+      s["fill"] = { fgColor: { rgb: convertColor(cellStyle.backgroundColor) } };
     }
     //  backgroundColor
     if (cellStyle.width) {
