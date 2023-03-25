@@ -1,18 +1,8 @@
 <script setup lang="ts">
-definePageMeta({
-  layout: 'preview',
-})
-
-useHead({
-  title: '出力プレビュー',
-  meta: [
-    { name: 'description', content: 'pdf出力用のプレビューページです。'}
-  ]
-})
+const router = useRouter();
+router.push("/preview")
 </script>
 
 <template>
-    <KeirekiTable />
-    <KeirekiDetailTable />
-    <SupplementTable class="break-before-page" />
+  <NuxtLink to="/preview">プレビューページへ</NuxtLink>
 </template>
