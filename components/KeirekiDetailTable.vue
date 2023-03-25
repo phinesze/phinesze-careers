@@ -3,7 +3,7 @@ import { careers } from "~/constants/careers";
 </script>
 
 <template>
-  <table class="table-fixed">
+  <table class="table-fixed target-table">
     <colgroup>
       <col class="w-[8mm]" />
       <col class="w-0.5 w-[8mm]" />

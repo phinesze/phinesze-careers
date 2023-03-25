@@ -81,7 +81,7 @@ export const useConvertToXlsx = () => {
     }
   }
 
-  const toXlsx = (table: HTMLTableElement) => {
+  const convertTableToXlsx = (table: HTMLTableElement) => {
     const opts = { raw: true };
     const workbook = utils.book_new();
 
@@ -129,6 +129,6 @@ export const useConvertToXlsx = () => {
   };
 
   return {
-    toXlsx,
+    convertTableToXlsx,
   };
 };
