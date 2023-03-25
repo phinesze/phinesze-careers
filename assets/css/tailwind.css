@@ -5,6 +5,7 @@
 @layer base {
   :root {
     font-size: 2mm;
+    font-family: "Segoe UI", "メイリオ";
   }
   body {
     box-sizing: border-box;
