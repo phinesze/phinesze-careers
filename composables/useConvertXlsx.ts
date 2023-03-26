@@ -33,6 +33,8 @@ export const useConvertToXlsx = () => {
     s["alignment"] = {
       vertical: getverticalAlignment(cellStyle.verticalAlign), // "top" or "center" or "bottom"
       horizontal: cellStyle.textAlign, // "left" or "center" or "right"
+      wrapText: true,
+      textRotation: 0,
     };
 
     //  backgroundColor
