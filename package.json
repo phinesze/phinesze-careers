@@ -26,6 +26,9 @@
     "sass": "^1.59.3"
   },
   "dependencies": {
-    "eslint-config-prettier": "^8.7.0"
+    "eslint-config-prettier": "^8.7.0",
+    "sheetjs-style": "^0.15.8",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.19.2/xlsx-0.19.2.tgz",
+    "xlsx-js-style": "^1.2.0"
   }
 }

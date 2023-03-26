@@ -30,6 +30,9 @@
   table th {
     @apply bg-gray-300;
   }
+  table td {
+    @apply bg-white;
+  }
 
   @page {
     size: A4 portrait;

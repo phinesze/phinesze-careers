@@ -1,9 +1,17 @@
 <script setup lang="ts">
 import { careers } from "~/constants/careers";
+
+const getRowSpan = (career: any) => {
+  let rowspan = 2;
+  if (career.teams) {
+    rowspan += 2;
+  }
+  return rowspan;
+}
 </script>
 
 <template>
-  <table class="table-fixed">
+  <table class="table-fixed target-table">
     <colgroup>
       <col class="w-[8mm]" />
       <col class="w-0.5 w-[8mm]" />
@@ -18,8 +26,8 @@ import { careers } from "~/constants/careers";
         class="career-row break-inside-avoid"
       >
         <tr>
-          <td class="bg-gray-400" rowspan="4">{{ company.company }}</td>
-          <td class="bg-lime-300" rowspan="4">#{{ career.id }}</td>
+          <td class="bg-gray-400" :rowspan="getRowSpan(career)">{{ company.company }}</td>
+          <td class="bg-lime-300" :rowspan="getRowSpan(career)">#{{ career.id }}</td>
           <th class="p-2">期間</th>
           <td class="font-bold p-2 bg-cyan-100">{{ career.title }}</td>
           <th class="p-2">言語・フレームワーク</th>
@@ -28,10 +36,10 @@ import { careers } from "~/constants/careers";
           <td>
             <IntervalDateLabel v-if="career.times" :value="career.times" />
           </td>
-          <td class="align-top" rowspan="3">
+          <td class="align-top" :rowspan="getRowSpan(career) - 1">
             <MarkdownDocument :path="`/careers/${career.id}`" />
           </td>
-          <td class="align-top" rowspan="3">
+          <td class="align-top" :rowspan="getRowSpan(career) - 1">
             <ul>
               <li
                 v-for="(elements, name) in career.environments"
