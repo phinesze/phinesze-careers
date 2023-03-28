@@ -20,20 +20,20 @@ const convertColor = (backgroundColor: string) => {
   return color;
 };
 
-function generateCellText(cell: HTMLElement, text = "") {
+function generateText(element: HTMLElement, text = "") {
   let t = text;
-  for (const childNode of cell.childNodes) {
+  for (const childNode of element.childNodes) {
     if (childNode.nodeType === Node.TEXT_NODE) {
       const childNodeData = childNode.nodeValue;
       t += childNodeData;
     } else {
       if (childNode.nodeType === Node.ELEMENT_NODE) {
         const display = window.getComputedStyle(childNode as Element).display;
-        if (!display.includes("inline")) {
+        if (!display.includes("inline") && !t.endsWith('\n')) {
           t += t ? "\n" : "";
         }
       }
-      t = generateCellText(childNode as HTMLElement, t);
+      t = generateText(childNode as HTMLElement, t);
     }
   }
   return t;
@@ -125,7 +125,7 @@ export const useConvertToXlsx = () => {
       const cells = row.querySelectorAll<HTMLTableCellElement>("th,td");
       let c = 0;
       for (const cell of cells) {
-        const text = generateCellText(cell);
+        const text = generateText(cell);
         while (aoa[r][c] && (aoa[r][c].v as string) === "null") {
           c++;
         }
