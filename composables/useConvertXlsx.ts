@@ -20,6 +20,25 @@ const convertColor = (backgroundColor: string) => {
   return color;
 };
 
+function generateCellText(cell: HTMLElement, text: string = "") {
+  let t = text;
+  for (const childNode of cell.childNodes) {
+    if (childNode.nodeType === Node.TEXT_NODE) {
+      const childNodeData = childNode.nodeValue;
+      t += childNodeData;
+    } else {
+      if (childNode.nodeType === Node.ELEMENT_NODE) {
+        const display = window.getComputedStyle(childNode as Element).display;
+        if (!display.includes("inline")) {
+          t += (t ? "\n" : "");
+        }
+      }
+      t = generateCellText(childNode as HTMLElement, t);
+    }
+  }
+  return t;
+}
+
 export const useConvertToXlsx = () => {
 
   /**
@@ -100,13 +119,14 @@ export const useConvertToXlsx = () => {
       const cells = row.querySelectorAll<HTMLTableCellElement>("th,td");
       let c = 0;
       for (const cell of cells) {
-        while (aoa[r][c] === "null") {
+        const text = generateCellText(cell);
+        while (aoa[r][c] && (aoa[r][c]["v"]) as string === "null") {
           c++;
         }
         const cellStyle = window.getComputedStyle(cell);
         // computedStyleからxlsxのセルのスタイルを設定する
         const s = addXlsxStyle(cellStyle);
-        aoa[r][c] = { v: cell.innerText, t: "s", s };
+        aoa[r][c] = { v: text, t: "s", s };
         // rowspanまたはcolspanの処理を実行
         toXlsx_runSpan(cell, r, c, aoa, merges, s);
         c++;
