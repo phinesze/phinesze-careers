@@ -66,15 +66,16 @@ export const useConvertToXlsx = () => {
    * @param c 0開始の列番号
    * @param aoa XLSXのセルオブジェクトを格納する表配列
    * @param merges XLSXの結合情報
+   * @param s XLSXのスタイル情報
    */
-  function toXlsx_runSpan(cell: HTMLTableCellElement, r: number, c: number, aoa: unknown[][], merges: Range[]) {
+  function toXlsx_runSpan(cell: HTMLTableCellElement, r: number, c: number, aoa: unknown[][], merges: Range[], s: {}) {
     const rowspan = Number(cell.getAttribute("rowspan") ?? 1);
     const colspan = Number(cell.getAttribute("colspan") ?? 1);
     if (rowspan > 1 || colspan > 1) {
       for (let r2 = r; r2 < r + rowspan; r2++) {
         for (let c2 = c; c2 < c + colspan; c2++) {
           if (!aoa[r2]) aoa[r2] = [];
-          if (!aoa[r2][c2]) aoa[r2][c2] = "null";
+          if (!aoa[r2][c2]) aoa[r2][c2] = { v: "null", s };
         }
       }
 
@@ -89,7 +90,7 @@ export const useConvertToXlsx = () => {
     const opts = { raw: true };
     const workbook = utils.book_new();
 
-    const aoa: unknown[][] = [];
+    const aoa: { v: string, t: string, s: any }[][] = [];
     const merges: Range[] = [];
     const rows = table.querySelectorAll("tr");
     const cols = table.querySelectorAll("colgroup col");
@@ -107,7 +108,7 @@ export const useConvertToXlsx = () => {
         const s = addXlsxStyle(cellStyle);
         aoa[r][c] = { v: cell.innerText, t: "s", s };
         // rowspanまたはcolspanの処理を実行
-        toXlsx_runSpan(cell, r, c, aoa, merges);
+        toXlsx_runSpan(cell, r, c, aoa, merges, s);
         c++;
       }
       r++;
