@@ -20,6 +20,25 @@ const convertColor = (backgroundColor: string) => {
   return color;
 };
 
+function generateCellText(cell: HTMLElement, text: string = "") {
+  let t = text;
+  for (const childNode of cell.childNodes) {
+    if (childNode.nodeType === Node.TEXT_NODE) {
+      const childNodeData = childNode.nodeValue;
+      t += childNodeData;
+    } else {
+      if (childNode.nodeType === Node.ELEMENT_NODE) {
+        const display = window.getComputedStyle(childNode as Element).display;
+        if (!display.includes("inline")) {
+          t += (t ? "\n" : "");
+        }
+      }
+      t = generateCellText(childNode as HTMLElement, t);
+    }
+  }
+  return t;
+}
+
 export const useConvertToXlsx = () => {
 
   /**
@@ -41,16 +60,12 @@ export const useConvertToXlsx = () => {
     if (cellStyle.backgroundColor) {
       s["fill"] = { fgColor: { rgb: convertColor(cellStyle.backgroundColor) } };
     }
-    //  backgroundColor
-    if (cellStyle.width) {
-      console.log("==== style width", cellStyle.width);
-    }
     // border 
     s["border"] = {
-      top: { style: "hair", color: "000000" },
-      bottom: { style: "hair", color: "000000" },
-      left: { style: "hair", color: "000000" },
-      right: { style: "hair", color: "000000" },
+      top: { style: "thin", color: "000000" },
+      bottom: { style: "thin", color: "000000" },
+      left: { style: "thin", color: "000000" },
+      right: { style: "thin", color: "000000" },
     };
     //
     s["font"] = {
@@ -66,15 +81,16 @@ export const useConvertToXlsx = () => {
    * @param c 0開始の列番号
    * @param aoa XLSXのセルオブジェクトを格納する表配列
    * @param merges XLSXの結合情報
+   * @param s XLSXのスタイル情報
    */
-  function toXlsx_runSpan(cell: HTMLTableCellElement, r: number, c: number, aoa: unknown[][], merges: Range[]) {
+  function toXlsx_runSpan(cell: HTMLTableCellElement, r: number, c: number, aoa: unknown[][], merges: Range[], s: {}) {
     const rowspan = Number(cell.getAttribute("rowspan") ?? 1);
     const colspan = Number(cell.getAttribute("colspan") ?? 1);
     if (rowspan > 1 || colspan > 1) {
       for (let r2 = r; r2 < r + rowspan; r2++) {
         for (let c2 = c; c2 < c + colspan; c2++) {
           if (!aoa[r2]) aoa[r2] = [];
-          if (!aoa[r2][c2]) aoa[r2][c2] = "null";
+          if (!aoa[r2][c2]) aoa[r2][c2] = { v: "null", s };
         }
       }
 
@@ -89,7 +105,7 @@ export const useConvertToXlsx = () => {
     const opts = { raw: true };
     const workbook = utils.book_new();
 
-    const aoa: unknown[][] = [];
+    const aoa: { v: string, t: string, s: any }[][] = [];
     const merges: Range[] = [];
     const rows = table.querySelectorAll("tr");
     const cols = table.querySelectorAll("colgroup col");
@@ -99,20 +115,20 @@ export const useConvertToXlsx = () => {
       const cells = row.querySelectorAll<HTMLTableCellElement>("th,td");
       let c = 0;
       for (const cell of cells) {
-        while (aoa[r][c] === "null") {
+        const text = generateCellText(cell);
+        while (aoa[r][c] && (aoa[r][c]["v"]) as string === "null") {
           c++;
         }
         const cellStyle = window.getComputedStyle(cell);
         // computedStyleからxlsxのセルのスタイルを設定する
         const s = addXlsxStyle(cellStyle);
-        aoa[r][c] = { v: cell.innerText, t: "s", s };
+        aoa[r][c] = { v: text, t: "s", s };
         // rowspanまたはcolspanの処理を実行
-        toXlsx_runSpan(cell, r, c, aoa, merges);
+        toXlsx_runSpan(cell, r, c, aoa, merges, s);
         c++;
       }
       r++;
     }
-    console.log("==== aoa", aoa);
     var worksheet = utils.aoa_to_sheet(aoa);
     worksheet["!merges"] = merges;
     worksheet["!rows"] = Array.from(rows).map((row) => {
