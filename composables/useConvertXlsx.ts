@@ -3,16 +3,16 @@ import { Range, utils, writeFile } from "xlsx-js-style";
 const getverticalAlignment = (verticalAlign: string) => {
   const verticalAlignMap: { [key: string]: string } = {
     "text-top": "top",
-    "top": "top",
-    "middle": "center",
-    "bottom": "bottom",
+    top: "top",
+    middle: "center",
+    bottom: "bottom",
     "text-bottom": "bottom",
   } as const;
   return verticalAlignMap[verticalAlign] ?? "top";
 };
 
 const convertColor = (backgroundColor: string) => {
-  const rgb = backgroundColor.match(/\d+/ig) ?? [];
+  const rgb = backgroundColor.match(/\d+/gi) ?? [];
   const [r, g, b] = rgb.map((num) => {
     return Number(num).toString(16).padStart(2, "0");
   });
@@ -20,7 +20,7 @@ const convertColor = (backgroundColor: string) => {
   return color;
 };
 
-function generateCellText(cell: HTMLElement, text: string = "") {
+function generateCellText(cell: HTMLElement, text = "") {
   let t = text;
   for (const childNode of cell.childNodes) {
     if (childNode.nodeType === Node.TEXT_NODE) {
@@ -30,7 +30,7 @@ function generateCellText(cell: HTMLElement, text: string = "") {
       if (childNode.nodeType === Node.ELEMENT_NODE) {
         const display = window.getComputedStyle(childNode as Element).display;
         if (!display.includes("inline")) {
-          t += (t ? "\n" : "");
+          t += t ? "\n" : "";
         }
       }
       t = generateCellText(childNode as HTMLElement, t);
@@ -40,7 +40,6 @@ function generateCellText(cell: HTMLElement, text: string = "") {
 }
 
 export const useConvertToXlsx = () => {
-
   /**
    * 各セルのComputedStyleからXLSXのcellのスタイルを作成する。
    * @param cellStyle
@@ -49,7 +48,7 @@ export const useConvertToXlsx = () => {
     const s: any = {};
 
     // alignment
-    s["alignment"] = {
+    s.alignment = {
       vertical: getverticalAlignment(cellStyle.verticalAlign), // "top" or "center" or "bottom"
       horizontal: cellStyle.textAlign, // "left" or "center" or "right"
       wrapText: true,
@@ -58,17 +57,17 @@ export const useConvertToXlsx = () => {
 
     //  backgroundColor
     if (cellStyle.backgroundColor) {
-      s["fill"] = { fgColor: { rgb: convertColor(cellStyle.backgroundColor) } };
+      s.fill = { fgColor: { rgb: convertColor(cellStyle.backgroundColor) } };
     }
-    // border 
-    s["border"] = {
+    // border
+    s.border = {
       top: { style: "thin", color: "000000" },
       bottom: { style: "thin", color: "000000" },
       left: { style: "thin", color: "000000" },
       right: { style: "thin", color: "000000" },
     };
     //
-    s["font"] = {
+    s.font = {
       sz: cellStyle.fontSize.replace("px", ""),
     };
     return s;
@@ -83,7 +82,14 @@ export const useConvertToXlsx = () => {
    * @param merges XLSXの結合情報
    * @param s XLSXのスタイル情報
    */
-  function toXlsx_runSpan(cell: HTMLTableCellElement, r: number, c: number, aoa: unknown[][], merges: Range[], s: {}) {
+  function toXlsx_runSpan(
+    cell: HTMLTableCellElement,
+    r: number,
+    c: number,
+    aoa: unknown[][],
+    merges: Range[],
+    s: {}
+  ) {
     const rowspan = Number(cell.getAttribute("rowspan") ?? 1);
     const colspan = Number(cell.getAttribute("colspan") ?? 1);
     if (rowspan > 1 || colspan > 1) {
@@ -101,11 +107,15 @@ export const useConvertToXlsx = () => {
     }
   }
 
-  const convertTableToXlsx = (table: HTMLTableElement, startRow = 0, startCol = 0) => {
+  const convertTableToXlsx = (
+    table: HTMLTableElement,
+    startRow = 0,
+    startCol = 0
+  ) => {
     const opts = { raw: true };
     const workbook = utils.book_new();
 
-    const aoa: { v: string, t: string, s: any }[][] = [];
+    const aoa: { v: string; t: string; s: any }[][] = [];
     const merges: Range[] = [];
     const rows = table.querySelectorAll("tr");
     const cols = table.querySelectorAll("colgroup col");
@@ -116,7 +126,7 @@ export const useConvertToXlsx = () => {
       let c = 0;
       for (const cell of cells) {
         const text = generateCellText(cell);
-        while (aoa[r][c] && (aoa[r][c]["v"]) as string === "null") {
+        while (aoa[r][c] && (aoa[r][c].v as string) === "null") {
           c++;
         }
         const cellStyle = window.getComputedStyle(cell);
@@ -129,21 +139,20 @@ export const useConvertToXlsx = () => {
       }
       r++;
     }
-    var worksheet = utils.aoa_to_sheet(aoa);
+    const worksheet = utils.aoa_to_sheet(aoa);
     worksheet["!merges"] = merges;
     worksheet["!rows"] = Array.from(rows).map((row) => {
-      return ({
+      return {
         hpx: Number(window.getComputedStyle(row).height.replace("px", "")),
-      });
+      };
     });
     worksheet["!cols"] = Array.from(cols).map((col) => {
-      return ({
+      return {
         wpx: Number(window.getComputedStyle(col).width.replace("px", "")),
-      });
+      };
     });
 
     utils.book_append_sheet(workbook, worksheet, "サンプル");
-
 
     writeFile(workbook, "demo.xlsx", { compression: false });
   };

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const router = useRouter();
-router.push("/preview")
+router.push("/preview");
 </script>
 
 <template>

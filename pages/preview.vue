@@ -1,14 +1,12 @@
 <script setup lang="ts">
 definePageMeta({
-  layout: 'preview',
-})
+  layout: "preview",
+});
 
 useHead({
-  title: '出力プレビュー',
-  meta: [
-    { name: 'description', content: 'pdf出力用のプレビューページです。'}
-  ]
-})
+  title: "出力プレビュー",
+  meta: [{ name: "description", content: "pdf出力用のプレビューページです。" }],
+});
 </script>
 
 <template>
