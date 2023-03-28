@@ -43,9 +43,9 @@ const getRowSpan = (career: any) => {
           >
             <p class="font-bold">{{ `【${name}】` }}</p>
             <div>
-              <template v-for="element in elements" :key="element">
+              <template v-for="(element, index) in elements" :key="element">
                 <EnvironmentElementLabel :element="element" />
-                <span>, </span>
+                <span v-if="index + 1 < elements.length">{{ '、' }}</span>
               </template>
             </div>
           </section>
