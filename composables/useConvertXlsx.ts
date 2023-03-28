@@ -47,10 +47,10 @@ export const useConvertToXlsx = () => {
     }
     // border 
     s["border"] = {
-      top: { style: "hair", color: "000000" },
-      bottom: { style: "hair", color: "000000" },
-      left: { style: "hair", color: "000000" },
-      right: { style: "hair", color: "000000" },
+      top: { style: "thin", color: "000000" },
+      bottom: { style: "thin", color: "000000" },
+      left: { style: "thin", color: "000000" },
+      right: { style: "thin", color: "000000" },
     };
     //
     s["font"] = {
