@@ -34,6 +34,11 @@ function generateText(element: HTMLElement, text = "") {
         }
       }
       t = generateText(childNode as HTMLElement, t);
+      const tagName = (childNode as Element).tagName;
+      if (tagName === 'P') {
+        console.log('==== tagName === P', t)
+        t += "\n\n";
+      }
     }
   }
   return t;
