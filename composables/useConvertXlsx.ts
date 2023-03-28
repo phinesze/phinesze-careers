@@ -60,10 +60,6 @@ export const useConvertToXlsx = () => {
     if (cellStyle.backgroundColor) {
       s["fill"] = { fgColor: { rgb: convertColor(cellStyle.backgroundColor) } };
     }
-    //  backgroundColor
-    if (cellStyle.width) {
-      console.log("==== style width", cellStyle.width);
-    }
     // border 
     s["border"] = {
       top: { style: "thin", color: "000000" },
@@ -133,7 +129,6 @@ export const useConvertToXlsx = () => {
       }
       r++;
     }
-    console.log("==== aoa", aoa);
     var worksheet = utils.aoa_to_sheet(aoa);
     worksheet["!merges"] = merges;
     worksheet["!rows"] = Array.from(rows).map((row) => {

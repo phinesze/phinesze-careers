@@ -7,13 +7,11 @@ const { convertTableToXlsx }= useConvertToXlsx()
 const targetTable = ref<HTMLTableElement | null>(null);
 onMounted(() => {
   targetTable.value = document.querySelector('.target-table')
-  console.log('=target ', targetTable)
 })
 
 const toPrint = () => print();
 
 const toXlsx = () => {
-  console.log('=== toXlsx', targetTable.value)
   if (targetTable.value) {
     convertTableToXlsx(targetTable.value)
   }
