@@ -11,6 +11,7 @@
       <col class="w-[50mm]" />
     </colgroup>
     <KeirekiTableAboutBody />
+    <KeirekiTableFrameworksBody />
     <KeirekiTableCareersBody />
     <KeirekiTableSupplementBody />
   </table>
