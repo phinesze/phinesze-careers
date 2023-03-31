@@ -10,6 +10,6 @@ export const career13 = {
   },
   environments: {
     フロントエンド: ["JavaScript", "Vue.js", "Quasar"],
-    バックエンド: ["php"],
+    バックエンド: ["PHP"],
   },
 };
