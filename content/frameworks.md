@@ -2,13 +2,16 @@
 メインで使用することの最も多い言語です。
 
 #### 【Vue.js、Nuxt】
-現在メインで業務で使用することが最も多いフレームワークです。
-バージョンはVue2, Nuxt2が多いですがcomposition-apiとscript setup構文を導入しております。
-Vue3 Nuxt3を現在学習中
+メインで業務で使用することが最も多いフレームワークです。
+バージョンはVue2, Nuxt2が多いですがcomposition-apiとscript setup構文が記述のメインとなります。
+create-nuxt-appなどを使用した個人開発でのスクラッチでの開発経験もございます。
 
 #### 【React、Next】
-業務で使用している他、過去に自身のポートフォリオを公開するようにwebサーバーを建てていた際にも使用しておりました。
-React Hooksキャッチアップ自体は可能です。
+一部の業務で使用している他、過去に自身のポートフォリオを公開するためにwebサーバーを建てていた際にも使用しておりました。
+React Hooksとfunction構文が記述のメインになります。 Vue.jsと同じく個人開発でのフルスクラッチでの開発経験もございます。
+
+#### 【フロントエンドで主に使用したフレームワーク】 
+Vuetify、tailwind css、npm、yarn、ESLint、Prettier、stylelint、Sass、dotenv、husky、jestなどになります。
 
 #### 【Node.js】
 フレームワークではNext.jsを使用してAPIを記述することが多いです。
@@ -24,7 +27,13 @@ apache-airflowなどのタスクを記述する際に使用しておりました
 
 #### 【Docker】
 直接触ることは少ないもののメインでの案件自体で使用していました。
-dockerfile、docker-composeなどのファイルの記述の修正なども行なっておりました。
+dockerfile、docker-composeを使用したファイルの記述の修正やコンテナの構築なども個人での経験を中心に行なっておりました。
 
 #### 【PHP（5がメイン）】
 主に過去の案件で5年ほど使用しておりました。
+
+#### 【git】
+githubをメインにgitlab、bitcuketを使用していました。
+
+#### 【その他のスキル・経験など】
+Linux サーバーの構築、AWS EC2 を使用したサーバーの立ち上げ
