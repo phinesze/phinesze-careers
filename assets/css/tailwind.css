@@ -11,6 +11,10 @@
     box-sizing: border-box;
     margin: 5mm;
   }
+  
+  p {
+    @apply mb-[2.5mm];
+  }
 
   table,
   thead,
