@@ -12,7 +12,7 @@
     margin: 5mm;
   }
 
-  p {
+  p:not(:last-child) {
     @apply mb-[2.5mm];
   }
 
