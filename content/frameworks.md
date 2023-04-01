@@ -37,4 +37,4 @@ dockerfile、docker-composeを使用したファイルの記述の修正やコ�
 githubをメインにgitlab、bitcuketを使用していました。
 
 #### 【その他のスキル・経験など】
-Linux サーバーの構築、AWS EC2 を使用したサーバーの立ち上げ
+個人経験ですが、Linux サーバーの構築、AWS EC2 とRoute53 を使用したサーバーの立ち上げの経験がございます。
