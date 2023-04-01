@@ -4,6 +4,3 @@ Linux(CentOS6~7、 Ubuntu18)、 PHP(5、 7)、 MySQL、 HTML5(CSS3、JavaScript 
 
 現在では npm、yarn、Vue.js(Composition API)、Nuxt.js を中心としたフロントエンドでの業務を中心に開発をしておりますが、
 Node.js(NestJS)や PHP などのバックエンド部分、bash、zsh などのコマンドラインシェルの操作や、や MySQL、PostgreSQL などの DB の使用、Google Cloud、Firebase など含めて 業務・個人開発含め Web に関する幅広い経験がございます。
-
-GitHub
-https://github.com/phinesze

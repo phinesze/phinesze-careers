@@ -12,6 +12,7 @@
     </colgroup>
     <KeirekiTableDocumentBody label="自己PR" markdownPath="/about" />
     <KeirekiTableDocumentBody label="主な経験" markdownPath="/frameworks" />
+    <KeirekiTableDocumentBody label="アカウント" markdownPath="/accounts" />
     <KeirekiTableProjectsBody />
     <KeirekiTableDocumentBody label="一問一答" markdownPath="/supplement" />
   </table>
