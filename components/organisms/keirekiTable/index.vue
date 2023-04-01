@@ -10,9 +10,9 @@
       <col class="w-[auto]" />
       <col class="w-[50mm]" />
     </colgroup>
-    <KeirekiTableAboutBody />
-    <KeirekiTableFrameworksBody />
+    <DocumentBody label="自己PR" markdownPath="/about" />
+    <DocumentBody label="主な経験" markdownPath="/frameworks" />
     <KeirekiTableProjectsBody />
-    <KeirekiTableSupplementBody />
+    <DocumentBody label="一問一答" markdownPath="/supplement" />
   </table>
 </template>
