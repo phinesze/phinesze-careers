@@ -2,7 +2,8 @@
 学生時代には Java、 C++、 C#などのプログラミング言語を学んでおり、 IT 業界に就業後は、
 Linux(CentOS6~7、 Ubuntu18)、 PHP(5、 7)、 MySQL、 HTML5(CSS3、JavaScriptを含む)、Vue.js、Reactなどのフロントエンドフレームワークや、Dockerのようなコンテナシステムなどの Web 関連の技術を習得してまいりました。
 
-現在では Node.js、npm、yarn、Vue.js(Composition API)、Nuxt.js を中心としたフロントエンドでの業務を中心に開発をしておりますが、バックエンド部分、コマンドラインシェル(Bash など)の操作や、や MySQL、PostgreSQL などの DB の使用、Google Cloud、Firebase など含めて Web に関する幅広い経験がございます。
+現在では npm、yarn、Vue.js(Composition API)、Nuxt.js を中心としたフロントエンドでの業務を中心に開発をしておりますが、
+Node.js(NestJS)やPHPなどのバックエンド部分、bash、zshなどのコマンドラインシェルの操作や、や MySQL、PostgreSQL などの DB の使用、Google Cloud、Firebase など含めて 業務・個人開発含めWeb に関する幅広い経験がございます。
 
 GitHub
 https://github.com/phinesze
