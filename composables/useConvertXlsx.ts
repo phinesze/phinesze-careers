@@ -29,14 +29,14 @@ function generateText(element: HTMLElement, text = "") {
     } else {
       if (childNode.nodeType === Node.ELEMENT_NODE) {
         const display = window.getComputedStyle(childNode as Element).display;
-        if (!display.includes("inline") && !t.endsWith('\n')) {
+        if (!display.includes("inline") && !t.endsWith("\n")) {
           t += t ? "\n" : "";
         }
       }
       t = generateText(childNode as HTMLElement, t);
       const tagName = (childNode as Element).tagName;
-      if (tagName === 'P') {
-        console.log('==== tagName === P', t)
+      if (tagName === "P") {
+        console.log("==== tagName === P", t);
         t += "\n\n";
       }
     }
