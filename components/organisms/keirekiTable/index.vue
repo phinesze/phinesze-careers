@@ -12,7 +12,7 @@
     </colgroup>
     <KeirekiTableAboutBody />
     <KeirekiTableFrameworksBody />
-    <KeirekiTableCareersBody />
+    <KeirekiTableProjectsBody />
     <KeirekiTableSupplementBody />
   </table>
 </template>
