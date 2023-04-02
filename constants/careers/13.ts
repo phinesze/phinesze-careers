@@ -1,4 +1,6 @@
-export const career13 = {
+import { Career } from "~/types/Career";
+
+export const career13: Career = {
   id: 13,
   title: "住宅注文システムなどのフロントエンド／バックエンドの開発",
   times: {

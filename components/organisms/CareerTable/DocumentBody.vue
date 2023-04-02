@@ -8,7 +8,7 @@ defineProps<{
 <template>
   <tbody>
     <tr>
-      <th class="p-4" colspan="2">{{ label }}</th>
+      <th class="p-2" colspan="2">{{ label }}</th>
       <td class="p-4 align-top" colspan="3">
         <MarkdownDocument :path="markdownPath" />
       </td>

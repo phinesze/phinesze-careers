@@ -6,26 +6,22 @@
 npm install
 ```
 
-## Development Server
+## 開発サーバー起動
 
-Start the development server on http://localhost:3000
+http://localhost:3000 でサーバーが起動
 
 ```bash
 npm run dev
 ```
 
-## Production
-
-Build the application for production:
+## 本番ビルド
 
 ```bash
 npm run build
 ```
 
-Locally preview production build:
+## プレビューサーバー起動
 
 ```bash
 npm run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

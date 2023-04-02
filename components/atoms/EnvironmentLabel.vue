@@ -19,7 +19,7 @@ const elementOptions = computed(() => {
   <div class="inline-block">
     <span>{{ elementName }}</span>
     <template v-if="elementOptions">
-      <i v-if="elementOptions.version"> v{{ elementOptions.version }} </i>
+      <i v-if="elementOptions.version"> (v{{ elementOptions.version }}) </i>
     </template>
   </div>
 </template>

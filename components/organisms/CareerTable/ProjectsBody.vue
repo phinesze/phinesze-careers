@@ -36,19 +36,7 @@ const getRowSpan = (career: any) => {
           <MarkdownDocument :path="`/careers/${career.id}`" />
         </td>
         <td class="align-top" :rowspan="getRowSpan(career) - 1">
-          <section
-            v-for="(elements, name) in career.environments"
-            :key="name"
-            class="mb-3"
-          >
-            <h4 class="font-bold">{{ `【${name}】` }}</h4>
-            <p>
-              <template v-for="(element, index) in elements" :key="element">
-                <EnvironmentElementLabel :element="element" />
-                <span v-if="index + 1 < elements.length">{{ "、" }}</span>
-              </template>
-            </p>
-          </section>
+          <EnvironmentListSection v-if="career.environments" :environments="career.environments" />
         </td>
       </tr>
       <tr v-if="career.teams" class="h-10">

@@ -21,7 +21,6 @@ Vuetify、tailwind css、npm、yarn、ESLint、Prettier、stylelint、Sass、dot
 #### 【Node.js】
 
 フレームワークでは Next.js を使用して API を記述することが多いです。
-Jest、
 
 #### 【SQL (MySQL、PostgreSQL がメイン)】
 
