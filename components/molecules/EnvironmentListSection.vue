@@ -1,0 +1,19 @@
+<script setup lang="ts">
+import { CareerEnvironmentList } from "~/types/Career";
+
+defineProps<{
+  environments: CareerEnvironmentList,
+}>()
+</script>
+
+<template>
+  <section v-for="(elements, name) in environments" :key="name" class="mb-3">
+    <h4 class="font-bold">{{ `【${name}】` }}</h4>
+    <p>
+      <template v-for="(element, index) in elements" :key="element">
+        <EnvironmentElementLabel :element="element" />
+        <span v-if="index + 1 < elements.length">{{ "、" }}</span>
+      </template>
+    </p>
+  </section>
+</template>
