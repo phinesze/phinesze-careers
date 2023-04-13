@@ -2,18 +2,16 @@
 import { CareerEnvironmentList } from "~/types/Career";
 
 defineProps<{
-  environments: CareerEnvironmentList,
-}>()
+  environments: CareerEnvironmentList;
+}>();
 </script>
 
 <template>
   <section v-for="(elements, name) in environments" :key="name" class="mb-3">
     <h4 class="font-bold">{{ `【${name}】` }}</h4>
-    <p>
-      <template v-for="(element, index) in elements" :key="element">
-        <EnvironmentLabel :element="element" />
-        <span v-if="index + 1 < elements.length">{{ "、" }}</span>
-      </template>
-    </p>
+    <div v-for="(element, index) in elements" :key="element">
+      <EnvironmentLabel :element="element" />
+      <span v-if="index + 1 < elements.length">{{ "、" }}</span>
+    </div>
   </section>
 </template>
