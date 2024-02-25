@@ -5,6 +5,7 @@ export const career20: Career = {
   title: "データ活用のマーケティングツールの開発",
   times: {
     start: "2022-11",
+    end: "2024-03",
   },
   environments: {
     フロントエンド: ["TypeScript", "React", "Next.js", "Tailwind css", "Jest"],
