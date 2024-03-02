@@ -2,7 +2,7 @@ import { Career } from "~/types/Career";
 
 export const career09: Career = {
   id: 9,
-  title: "中古車ECサイト/Webアプリケーション運用保守",
+  title: "中古車ECサイト／Webアプリケーション運用保守",
   times: {
     start: "2018-11",
     end: "2018-12",
