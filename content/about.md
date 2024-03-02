@@ -1,6 +1,6 @@
-私は JavaScript(Node.js、TypeScript)、Vue.js、React、Angular、PHP、Java などを使用したフロントエンド／バックエンドでの Web の開発を行ってまいりました。
-学生時代には Java、 C++、 C#などのプログラミング言語を学んでおり、 IT 業界に就業後は、
-Linux(CentOS6~7、 Ubuntu18)、 PHP(5、 7)、 MySQL、 HTML5(CSS3、JavaScript を含む)、Vue.js、React などのフロントエンドフレームワークや、Docker のようなコンテナシステムなどの Web 関連の技術を習得してまいりました。
+私はJavaScript(Node.js、TypeScript)、Vue.js、React、Angular、PHP、Javaなどを使用したフロントエンド／バックエンドでのWebの開発を行ってまいりました。
+学生時代にはJava、 C++、 C#などのプログラミング言語を学んでおり、 IT業界に就業後は、
+Linux(CentOS6〜7、 Ubuntu18)、 PHP(5、 7)、 MySQL、 HTML5(CSS3、JavaScriptを含む）、Vue.js、Reactなどのフロントエンドフレームワークや、DockerのようなコンテナシステムなどのWeb関連の技術を習得してまいりました。
 
-現在では npm、yarn、Vue.js(Composition API)、Nuxt.js を中心としたフロントエンドでの業務を中心に開発をしておりますが、
-Node.js(NestJS)や PHP などのバックエンド部分、bash、zsh などのコマンドラインシェルの操作や、や MySQL、PostgreSQL などの DB の使用、Google Cloud、Firebase など含めて 業務・個人開発含め Web に関する幅広い経験がございます。
+現在ではnpm、yarn、Vue.js(Composition API)、Nuxt.jsを中心としたフロントエンドでの業務を中心に開発をしておりますが、
+Node.js(NestJS)やPHPなどのバックエンド部分、bash、zshなどのコマンドラインシェルの操作や、やMySQL、PostgreSQLなどのDBの使用、Google Cloud、Firebaseなど含めて業務・個人開発含めWebに関する幅広い経験がございます。
