@@ -2,6 +2,11 @@
   "plugins": {},
   "filters": {},
   "rules": {
+    "preset-japanese": {
+      "sentence-length": {
+        "max": 10000
+      }
+    },
     "preset-jtf-style": true
   }
 }
