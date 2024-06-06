@@ -25,7 +25,7 @@ export const career17: Career = {
       " axios",
       "Vue Composition Api",
     ],
-    バックエンド: ["PostgresSQL"],
+    バックエンド: ["PostgreSQL"],
     その他: ["docker"],
   },
 };

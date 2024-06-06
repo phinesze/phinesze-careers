@@ -19,8 +19,10 @@ import { career18 } from "~/constants/careers/18";
 import { career19 } from "~/constants/careers/19";
 import { career20 } from "~/constants/careers/20";
 import { career21 } from "~/constants/careers/21";
+import { career22 } from "~/constants/careers/22";
 
 export const careers = [
+  { company: "", careers: [career22] },
   { company: "M社", careers: [career21] },
   { company: "L社", careers: [career20] },
   { company: "K社", careers: [career19] },
