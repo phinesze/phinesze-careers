@@ -33,10 +33,16 @@ const getRowSpan = (career: any) => {
           <IntervalDateLabel v-if="career.times" :value="career.times" />
         </td>
         <td class="align-top" :rowspan="getRowSpan(career) - 1">
-          <MarkdownDocument :path="`/careers/${career.id}`" />
+          <MarkdownDocument
+            :markdown-text="career.detail"
+            :path="`/careers/${career.id}`"
+          />
         </td>
         <td class="align-top" :rowspan="getRowSpan(career) - 1">
-          <EnvironmentListSection v-if="career.environments" :environments="career.environments" />
+          <EnvironmentListSection
+            v-if="career.environments"
+            :environments="career.environments"
+          />
         </td>
       </tr>
       <tr v-if="career.teams" class="h-10">
@@ -47,7 +53,7 @@ const getRowSpan = (career: any) => {
           <ul class="inline-block w-fit">
             <li
               v-for="(teamNumber, team) in career.teams"
-              :key="name"
+              :key="team"
               class="text-left"
             >
               {{ team }}:

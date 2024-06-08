@@ -1,12 +1,24 @@
 <script setup lang="ts">
-defineProps<{
-  path: string;
+import markdownit from "markdown-it";
+const md = markdownit();
+
+const props = defineProps<{
+  path?: string;
+  markdownText?: string;
 }>();
+
+const renderedHtml = computed(() => {
+  return props.markdownText ? md.render(props.markdownText) : "";
+});
 </script>
 
 <template>
-  <section>
-    <ContentDoc :path="path" :head="false" />
+  <section v-if="props.path">
+    <ContentDoc :path="props.path" :head="false" />
+  </section>
+  <section v-if="markdownText">
+    <!-- eslint-disable-next-line vue/no-v-html -->
+    <div v-html="renderedHtml" />
   </section>
 </template>
 

@@ -6,6 +6,7 @@ export type CareerEnvironmentList = { [key: string]: CareerEnvironment[] };
 export interface Career {
   id: number;
   title?: string;
+  detail?: string;
   times?: {};
   teams?: {};
   environments?: CareerEnvironmentList;
