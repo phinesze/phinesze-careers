@@ -1,3 +1,4 @@
+import { CareerGroup } from "~/types/CareerGroup";
 import { career01 } from "~/constants/careers/01";
 import { career02 } from "~/constants/careers/02";
 import { career03 } from "~/constants/careers/03";
@@ -21,7 +22,7 @@ import { career20 } from "~/constants/careers/20";
 import { career21 } from "~/constants/careers/21";
 import { career22 } from "~/constants/careers/22";
 
-export const careers = [
+export const careers: CareerGroup[] = [
   { company: "", careers: [career22] },
   { company: "M社", careers: [career21] },
   { company: "L社", careers: [career20] },
