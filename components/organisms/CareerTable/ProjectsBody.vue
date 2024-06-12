@@ -33,10 +33,7 @@ const getRowSpan = (career: any) => {
           <IntervalDateLabel v-if="career.times" :value="career.times" />
         </td>
         <td class="align-top" :rowspan="getRowSpan(career) - 1">
-          <MarkdownDocument
-            :markdown-text="career.detail"
-            :path="`/careers/${career.id}`"
-          />
+          <MarkdownDocument :markdown-text="career.detail" />
         </td>
         <td class="align-top" :rowspan="getRowSpan(career) - 1">
           <EnvironmentListSection

@@ -3,8 +3,8 @@ import markdownit from "markdown-it";
 const md = markdownit();
 
 const props = defineProps<{
-  path?: string;
   markdownText?: string;
+  path?: string;
 }>();
 
 const renderedHtml = computed(() => {
