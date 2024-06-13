@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { careers } from "~/constants/careers";
+import { projectGroups } from "~/constants/projectGroups";
+import { ProjectGroup } from "~/types/ProjectGroup";
 
 const getRowSpan = (career: any) => {
   let rowspan = 2;
@@ -11,15 +12,15 @@ const getRowSpan = (career: any) => {
 </script>
 
 <template>
-  <template v-for="company in careers">
+  <template v-for="group in projectGroups as ProjectGroup[]">
     <tbody
-      v-for="career in company.careers"
+      v-for="career in group.projects"
       :key="career.id"
       class="career-row break-inside-avoid"
     >
       <tr>
         <td class="bg-gray-400" :rowspan="getRowSpan(career)">
-          {{ company.company }}
+          {{ group.company }}
         </td>
         <td class="bg-lime-300" :rowspan="getRowSpan(career)">
           #{{ career.id }}
