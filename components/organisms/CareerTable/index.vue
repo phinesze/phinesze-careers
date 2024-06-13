@@ -16,7 +16,7 @@
     <CareerTableDocumentBody label="自己PR" markdown-path="/about" />
     <CareerTableDocumentBody label="主な経験" markdown-path="/frameworks" />
     <CareerTableDocumentBody label="アカウント" markdown-path="/accounts" />
-    <CareerTableProjectsBody />
+    <CareerTableProjectsGroupsBody />
     <CareerTableDocumentBody label="一問一答" markdown-path="/supplement" />
   </table>
 </template>
