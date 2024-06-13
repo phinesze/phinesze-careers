@@ -4,7 +4,6 @@ const md = markdownit();
 
 const props = defineProps<{
   markdownText?: string;
-  path?: string;
 }>();
 
 const renderedHtml = computed(() => {
@@ -13,9 +12,6 @@ const renderedHtml = computed(() => {
 </script>
 
 <template>
-  <section v-if="props.path">
-    <ContentDoc :path="props.path" :head="false" />
-  </section>
   <section v-if="markdownText">
     <!-- eslint-disable-next-line vue/no-v-html -->
     <div v-html="renderedHtml" />
