@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import DateLabel from "../../atoms/DateLabel";
+import { projectGroups } from "~/constants/projectGroups";
+</script>
+
 <template>
   <table class="table-fixed target-table">
     <caption class="relative mb-5">
@@ -16,13 +21,7 @@
     <CareerTableDocumentBody label="自己PR" markdown-path="/about" />
     <CareerTableDocumentBody label="主な経験" markdown-path="/frameworks" />
     <CareerTableDocumentBody label="アカウント" markdown-path="/accounts" />
-    <CareerTableProjectsGroupsBody />
+    <CareerTableProjectsGroupsBody :project-groups="projectGroups" />
     <CareerTableDocumentBody label="一問一答" markdown-path="/supplement" />
   </table>
 </template>
-<script>
-import DateLabel from "../../atoms/DateLabel";
-export default {
-  components: { DateLabel },
-};
-</script>

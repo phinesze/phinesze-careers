@@ -1,6 +1,9 @@
 <script setup lang="ts">
-import { projectGroups } from "~/constants/projectGroups";
 import { ProjectGroup } from "~/types/ProjectGroup";
+
+const props = defineProps<{
+  projectGroups: ProjectGroup[];
+}>();
 
 const getRowSpan = (career: any) => {
   let rowspan = 2;
@@ -12,7 +15,7 @@ const getRowSpan = (career: any) => {
 </script>
 
 <template>
-  <template v-for="group in projectGroups as ProjectGroup[]">
+  <template v-for="group in props.projectGroups as ProjectGroup[]">
     <tbody
       v-for="career in group.projects"
       :key="career.id"
