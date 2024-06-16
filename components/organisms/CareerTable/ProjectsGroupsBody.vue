@@ -2,7 +2,7 @@
 import { ProjectGroup } from "~/types/ProjectGroup";
 
 const props = defineProps<{
-  projectGroups: ProjectGroup[];
+  groups: ProjectGroup[];
 }>();
 
 const getRowSpan = (career: any) => {
@@ -15,7 +15,7 @@ const getRowSpan = (career: any) => {
 </script>
 
 <template>
-  <template v-for="group in props.projectGroups as ProjectGroup[]">
+  <template v-for="group in props.groups as ProjectGroup[]">
     <tbody
       v-for="career in group.projects"
       :key="career.id"

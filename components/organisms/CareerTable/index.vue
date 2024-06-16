@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import DateLabel from "../../atoms/DateLabel";
-import { projectGroups } from "~/constants/projectGroups";
-import { about } from "~/constants/doduments/about";
-import { frameworks } from "~/constants/doduments/frameworks";
-import { accounts } from "~/constants/doduments/accounts";
-import { supplement } from "~/constants/doduments/supplement";
+import { careerTableSections } from "~/constants/careerTableSections";
 </script>
 
 <template>
@@ -22,10 +18,18 @@ import { supplement } from "~/constants/doduments/supplement";
       <col class="w-[auto]" />
       <col class="w-[50mm]" />
     </colgroup>
-    <CareerTableDocumentBody :markdown-text="about" label="自己PR" />
-    <CareerTableDocumentBody label="主な経験" :markdown-text="frameworks" />
-    <CareerTableDocumentBody label="アカウント" :markdown-text="accounts" />
-    <CareerTableProjectsGroupsBody :project-groups="projectGroups" />
-    <CareerTableDocumentBody label="一問一答" :markdown-text="supplement" />
+    <template v-for="(section, index) in careerTableSections">
+      <CareerTableDocumentBody
+        v-if="section.type === 'document'"
+        :key="index"
+        :markdown-text="section.detail"
+        :label="section.label"
+      />
+      <CareerTableProjectsGroupsBody
+        v-if="section.type === 'project-groups'"
+        :key="index"
+        :groups="section.groups"
+      />
+    </template>
   </table>
 </template>
