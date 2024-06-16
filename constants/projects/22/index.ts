@@ -3,7 +3,7 @@ import { detail } from "~/constants/projects/22/detail";
 
 export const project22: Project = {
   id: 22,
-  title: "",
+  title: "ヘルスチェックサービス改修、相談／回答システムの新規開発",
   detail,
   times: {
     start: "2024-04",
