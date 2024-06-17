@@ -11,9 +11,9 @@
     "postinstall": "nuxi prepare",
     "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
     "lint:style": "stylelint \"**/*.{css,scss,sass,html,vue}\" --ignore-path .gitignore",
-    "lint:prettier": "prettier --check .",
-    "lint:text": "textlint .",
-    "lintfix:prettier": "prettier --write ."
+    "prettier": "prettier --check .",
+    "format": "prettier --write .",
+    "lint:text": "textlint ."
   },
   "devDependencies": {
     "@nuxt/content": "^2.5.2",
