@@ -9,8 +9,8 @@
     "generate": "nuxi generate",
     "preview": "nuxi preview",
     "postinstall": "nuxi prepare",
-    "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
-    "lint:style": "stylelint \"**/*.{css,scss,sass,html,vue}\" --ignore-path .gitignore",
+    "eslint": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
+    "stylelint": "stylelint \"**/*.{css,scss,sass,html,vue}\" --ignore-path .gitignore",
     "prettier": "prettier --check .",
     "format": "prettier --write .",
     "lint:text": "textlint ."
@@ -39,5 +39,9 @@
     "sheetjs-style": "^0.15.8",
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.19.2/xlsx-0.19.2.tgz",
     "xlsx-js-style": "^1.2.0"
+  },
+  "lint-staged": {
+    "*.{ts,js,vue}": "eslint --fix",
+    "*.{css,scss,sass,html,vue}": "stylelint --fix"
   }
 }
