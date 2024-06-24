@@ -3,21 +3,38 @@ import DateLabel from "../../atoms/DateLabel";
 import { careerTableSections } from "~/constants/careerTableSections";
 import { projectGroups } from "~/constants/projectGroups.ts";
 
-const secrets = await useAsyncData("getSecrets", async () => {
-  let projectGroupsSecrets = {};
-  try {
-    debugger;
-    projectGroupsSecrets = await import("@/constants/projectGroupsSecrets.ts");
-    return projectGroupsSecrets;
-  } catch (error) {
-    return {};
-  }
-});
+const props = defineProps<{
+  isSecret: boolean;
+}>();
 
-// @ts-ignore
-const secretsArray = secrets.data.value.projectGroupsSecrets?.dataArray || {};
-for (const index in careerTableSections) {
-  Object.assign(projectGroups[index], secretsArray[index]);
+if (props.isSecret) {
+  // projectGroupsSecrets.tsを読み込む
+  const secrets = await useAsyncData("getSecrets", async () => {
+    let projectGroupsSecrets = {};
+    try {
+      debugger;
+      projectGroupsSecrets = await import(
+        "@/constants/projectGroupsSecrets.ts"
+      );
+      return projectGroupsSecrets;
+    } catch (error) {
+      return {};
+    }
+  });
+
+  // @ts-ignore
+  const secretsArray = secrets.data.value.projectGroupsSecrets?.dataArray || {};
+  const projectGroupsCopy = projectGroups.map((group, index) =>
+    Object.assign({}, group, secretsArray[index]),
+  );
+
+  // @ts-ignore
+  careerTableSections.find((s) => s.type === "project-groups").groups =
+    projectGroupsCopy;
+} else {
+  // @ts-ignore
+  careerTableSections.find((s) => s.type === "project-groups").groups =
+    projectGroups;
 }
 </script>
 
