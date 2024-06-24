@@ -1,6 +1,24 @@
 <script setup lang="ts">
 import DateLabel from "../../atoms/DateLabel";
 import { careerTableSections } from "~/constants/careerTableSections";
+import { projectGroups } from "~/constants/projectGroups.ts";
+
+const secrets = await useAsyncData("getSecrets", async () => {
+  let projectGroupsSecrets = {};
+  try {
+    debugger;
+    projectGroupsSecrets = await import("@/constants/projectGroupsSecrets.ts");
+    return projectGroupsSecrets;
+  } catch (error) {
+    return {};
+  }
+});
+
+// @ts-ignore
+const secretsArray = secrets.data.value.projectGroupsSecrets?.dataArray || {};
+for (const index in careerTableSections) {
+  Object.assign(projectGroups[index], secretsArray[index]);
+}
 </script>
 
 <template>
