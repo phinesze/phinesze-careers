@@ -23,10 +23,10 @@ import { project21 } from "~/constants/projects/21";
 import { project22 } from "~/constants/projects/22";
 
 export const projectGroups: ProjectGroup[] = [
-  { company: "", projects: [project22] },
-  { company: "M社", projects: [project21] },
-  { company: "L社", projects: [project20] },
-  { company: "K社", projects: [project19] },
+  { company: "Q社", projects: [project22] },
+  { company: "P社", projects: [project21] },
+  { company: "O社", projects: [project20] },
+  { company: "N社", projects: [project19] },
   { company: "I社→L社、M社", projects: [project18] },
   { company: "K社", projects: [project17] },
   {
