@@ -5,16 +5,16 @@ import { projectGroups } from "~/constants/projectGroups";
 import { supplement } from "~/constants/doduments/supplement";
 import { ProjectGroup } from "~/types/ProjectGroup.ts";
 
-type Document = {
+export interface Document {
   type: "document";
   label: string;
   detail: string;
-};
+}
 
-type ProjectGroups = {
+export interface ProjectGroups {
   type: "project-groups";
   groups: ProjectGroup[];
-};
+}
 
 type Selection = Document | ProjectGroups;
 
