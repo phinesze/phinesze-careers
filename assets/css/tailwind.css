@@ -34,8 +34,11 @@
   table th {
     @apply bg-gray-300;
   }
-  table td {
+  table {
     @apply bg-white;
+  }
+  table.secret {
+    @apply bg-amber-100;
   }
 
   @page {

@@ -39,9 +39,12 @@ if (props.isSecret) {
 </script>
 
 <template>
-  <table class="table-fixed target-table">
+  <table
+    :class="`table-fixed target-table ${props.isSecret ? 'secret' : null}`"
+  >
     <caption class="relative mb-5">
       <div class="text-5xl">職務経歴書</div>
+      <div v-if="props.isSecret" class="text-xl">機密要素あり</div>
       <div class="absolute right-0 bottom-0 text-sm">
         <DateLabel value="2024-06-28" /> 更新
       </div>
