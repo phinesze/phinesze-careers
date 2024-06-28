@@ -43,7 +43,7 @@ if (props.isSecret) {
     <caption class="relative mb-5">
       <div class="text-5xl">職務経歴書</div>
       <div class="absolute right-0 bottom-0 text-sm">
-        <DateLabel value="2024-06-16" /> 更新
+        <DateLabel value="2024-06-28" /> 更新
       </div>
     </caption>
     <colgroup>
