@@ -1,5 +1,5 @@
 export const about = `
-私はJavaScript（Node.js・TypeScript）・Vue.js・React・Angular・PHP・Javaなどを使用したフロントエンド／バックエンドでのWeb開発してまいりました。
+私はJavaScript（TypeScript）・Vue.js・React・Angularなどを採用したフロントエンドと、Node.js・PHP・Javaなどを使用したバックエンドでのWeb開発をメインとしてまいりました。
 学生時代にはJava・C++・C#等のプログラミング言語を学んでおり・IT業界に就業後は、
 Linux（CentOS6〜7・Ubuntu18）・PHP（5・7）・MySQL・HTML5（CSS3・JavaScriptを含む）・Vue.js・React等のフロントエンドフレームワークやDockerのようなコンテナシステム等のWeb関連の技術を習得してまいりました。
 
