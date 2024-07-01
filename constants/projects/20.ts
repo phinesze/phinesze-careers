@@ -24,7 +24,7 @@ export const detail = `
 
 export const project20: Project = {
   id: 20,
-  title: "データ活用のマーケティングツールの開発",
+  title: "企業向けのデータ活用のマーケティングツールの開発",
   detail,
   times: {
     start: "2022-11",

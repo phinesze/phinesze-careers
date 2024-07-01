@@ -1,7 +1,7 @@
 import { Project } from "~/types/Project";
 
 export const detail = `
-【想定するエンドユーザー】
+#### 【想定するエンドユーザー】
 市町村の自治体
 
 #### 【システム概要】

@@ -37,7 +37,8 @@ export const detail = `
 
 export const project17: Project = {
   id: 17,
-  title: "地方自治体をエンドユーザーとする交通・人流分析WEBアプリの開発",
+  title:
+    "地方自治体の交通アクセスに関する課題を解決するとする交通・人流分析のWEBアプリの開発",
   detail,
   times: {
     start: "2021-09",

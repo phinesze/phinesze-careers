@@ -1,5 +1,21 @@
-export const career__ = {
+export const detail = `
+#### **【想定するエンドユーザー】**
+
+#### **【システム概要】**
+
+#### 【開発手法】
+
+#### 【担当フェーズ】
+
+#### 【担当業務】
+
+#### 【備考】
+
+`;
+
+export const project__ = {
   title: "",
+  detail,
   times: {
     start: "yyyy-mm-dd",
     end: "yyyy-mm-dd",
