@@ -1,5 +1,18 @@
 import { Project } from "~/types/Project";
-import { detail } from "~/constants/projects/13/detail";
+
+export const detail = `
+#### 【システム概要】
+
+主にフロントエンドの新規開発、モックアップとして動くHTMLをVueコンポーネントとして分割などを作業する。
+
+#### 【担当フェーズ】
+
+開発
+
+#### 【担当業務】
+
+フロントエンド（Vue.js・Quasar）の新規開発とAPI部分（PHP）の改修、追加をする。
+`;
 
 export const project13: Project = {
   id: 13,

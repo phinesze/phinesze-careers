@@ -1,5 +1,18 @@
 import { Project } from "~/types/Project";
-import { detail } from "~/constants/projects/03/detail";
+
+export const detail = `
+#### 【システム概要】
+
+企業ウェブサイトのリニューアルに伴いレスポンシブ対応、かつパララックスの視覚効果に対応したのウェブページを開発する。
+
+#### 【担当フェーズ】
+
+フレームワークの選定・基本設計・詳細設計・製造
+
+#### 【担当業務】
+
+要件定義と画面イメージを基として、要求された視覚効果のリクエストに応じて、jQueryフレームワークの選定とHTML5・CSS3・JavaScriptのコーディングをしました。
+`;
 
 export const project03: Project = {
   id: 3,

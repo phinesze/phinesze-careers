@@ -1,5 +1,20 @@
 import { Project } from "~/types/Project";
-import { detail } from "~/constants/projects/12/detail";
+
+export const detail = `
+#### 【システム概要】
+
+VR空間の共有サービス
+フロントエンドまたはバックエンド部分を改修する。
+
+#### 【担当フェーズ】
+
+開発
+
+#### 【担当業務】
+
+- フロントエンド（Vue.js・Nuxt.js）とバックエンドAPI（Node.js+Express）部分の改修を中心にコーディングしました。
+- iframe埋め込み部分やReCAPTCHA（V3）など外部サービスとフロントエンド／バックエンド部分を連携しました。
+`;
 
 export const project12: Project = {
   id: 12,

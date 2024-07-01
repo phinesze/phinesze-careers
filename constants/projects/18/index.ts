@@ -1,5 +1,16 @@
 import { Project } from "~/types/Project";
-import { detail } from "~/constants/projects/18/detail";
+
+export const detail = `
+#### 【システム概要】
+不動産情報ウェブサイトとアンケートウェブサイトのフロントエンドを開発・テストする。
+
+#### 【担当フェーズ】
+フロントエンドの開発
+
+#### 【担当業務】
+- （不動産仲介サービス）Redmineによる改善要求に伴いフロントエンド側を改修作業しました。
+- （アンケートウェブサイトの制作）Adove XDファイルのデザインを元に1d-Colorのプラットフォーム上で質問ページをHTML・CSS・JavsScriptで作成しました。
+`;
 
 export const project18: Project = {
   id: 18,

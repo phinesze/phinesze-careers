@@ -1,5 +1,18 @@
 import { Project } from "~/types/Project";
-import { detail } from "~/constants/projects/02/detail";
+
+export const detail = `
+#### 【システム概要】
+
+電子部品メーカーの法人向けのコネクタ検索のウェブサイトのフロントエンド・バックエンドを改修する。
+
+#### 【担当フェーズ】
+
+詳細設計・開発・テスト
+
+#### 【担当業務】
+
+要件定義・基本設計を基として詳細設計とコーディング・単体・結合テストをしました。
+`;
 
 export const project02: Project = {
   id: 2,

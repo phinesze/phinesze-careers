@@ -1,5 +1,19 @@
 import { Project } from "~/types/Project";
-import { detail } from "~/constants/projects/04/detail";
+
+export const detail = `
+#### 【システム概要】
+
+電子部品メーカーの社内向けの工数管理システム。
+各メンバーが各月ごとのページから日付／プロジェクトごとに割り振られた格子状のマスに作業時間を入力して、プロジェクトの進捗情報などを集計する。
+
+#### 【担当フェーズ】
+
+詳細設計・開発・テスト
+
+#### 【担当業務】
+
+要件定義・外部設計を基として詳細設計とASP.NETとJavaScript・HTML5・CSS3をコーディング、ストアドプロシージャを含むSQLのコーディング、単体・結合テストを開発メンバーと共にしました。
+`;
 
 export const project04: Project = {
   id: 4,

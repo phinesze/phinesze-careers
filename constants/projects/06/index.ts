@@ -1,5 +1,18 @@
 import { Project } from "~/types/Project";
-import { detail } from "~/constants/projects/06/detail";
+
+export const detail = `
+#### 【システム概要】
+
+電子部品メーカーの社内向けの健康保険管理システム。宿泊予約サイトのAPIとつながる形で予約を入れる。
+
+#### 【担当フェーズ】
+
+詳細設計・開発・テスト
+
+#### 【担当業務】
+
+要件定義・外部設計を基として詳細設計とコーディング・単体・結合テストをしました。
+`;
 
 export const project06: Project = {
   id: 6,

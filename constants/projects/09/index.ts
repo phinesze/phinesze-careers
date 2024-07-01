@@ -1,5 +1,19 @@
 import { Project } from "~/types/Project";
-import { detail } from "~/constants/projects/09/detail";
+
+export const detail = `
+#### 【システム概要】
+
+中古車ECサイトでのWebサービスの保守運用業務。
+ソースコードのリアルタイムでの改修とリリースなどを保守運用業務する。
+
+#### 【担当フェーズ】
+
+開発・運用保守
+
+#### 【担当業務】
+
+メンバーと相談しつつ、PHP（CakePHP）・JavaScriptなどでのソースコードの改修とサービスを保守運用しました。
+`;
 
 export const project09: Project = {
   id: 9,
