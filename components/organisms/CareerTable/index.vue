@@ -46,7 +46,7 @@ if (props.isSecret) {
       <div class="text-5xl">職務経歴書</div>
       <div v-if="props.isSecret" class="text-xl">機密要素あり</div>
       <div class="absolute right-0 bottom-0 text-sm">
-        <DateLabel value="2024-06-30" /> 更新
+        <DateLabel value="2024-07-01" /> 更新
       </div>
     </caption>
     <colgroup>
