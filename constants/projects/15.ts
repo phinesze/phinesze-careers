@@ -1,5 +1,6 @@
 import { Project } from "~/types/Project";
 
+// TODO detail システム概要に対する追記が必要？
 export const detail = `
 #### 【想定するエンドユーザー】
 一般ユーザー
