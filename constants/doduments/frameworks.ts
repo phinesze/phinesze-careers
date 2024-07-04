@@ -1,16 +1,16 @@
 export const frameworks = `
-#### 【JavaScript・TypeScript】（5 年以上）
+#### 【JavaScript・TypeScript】（5年以上）
 
 現状で得意とするメインで使用することの最も多い言語です。
 ES2021まで経験済みです。
 
-#### 【Vue.js・Nuxt】（3 年以上）
+#### 【Vue.js・Nuxt】（3年以上）
 
 現状得意とするメインの業務で使用することが最も多いフレームワークです。
 バージョンはVue2, Nuxt2が多いですがcomposition-apiとscript setup構文が記述のメインとなります。
 create-nuxt-appなどを使用した個人開発でのスクラッチの開発経験もございます。
 
-#### 【React・Next】（業務では 1 年未満／修正メイン）
+#### 【React・Next】（2年以上）
 
 一部の業務で使用している他、過去に自分用のポートフォリオを公開するためにwebサーバーを建てていた際にも使用しておりました。
 React Hooksとfunction構文が記述のメインになります。Vue.jsと同じく個人開発でのフルスクラッチの開発経験もございます。
