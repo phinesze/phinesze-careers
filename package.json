@@ -36,6 +36,7 @@
   "dependencies": {
     "eslint-config-prettier": "^8.7.0",
     "markdown-it": "^14.1.0",
+    "node-fetch-native": "^1.6.4",
     "sheetjs-style": "^0.15.8",
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.19.2/xlsx-0.19.2.tgz",
     "xlsx-js-style": "^1.2.0"
