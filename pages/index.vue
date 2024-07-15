@@ -1,8 +1,17 @@
 <script setup lang="ts">
-const router = useRouter();
-router.push("/preview");
+import { usePreviewFont } from "~/composables/usePreview.ts";
+const { setRootFontSize } = usePreviewFont();
+
+onMounted(() => {
+  setRootFontSize("");
+});
 </script>
 
 <template>
-  <NuxtLink to="/preview">プレビューページへ</NuxtLink>
+  <section>
+    <NuxtLink class="block" to="/preview">プレビューページへ</NuxtLink>
+    <NuxtLink class="block text-2xl" to="/preview?secret=1"
+      >機密プレビューページへ</NuxtLink
+    >
+  </section>
 </template>

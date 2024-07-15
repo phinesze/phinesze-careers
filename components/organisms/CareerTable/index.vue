@@ -12,7 +12,6 @@ if (props.isSecret) {
   const secrets = await useAsyncData("getSecrets", async () => {
     let projectGroupsSecrets = {};
     try {
-      debugger;
       projectGroupsSecrets = await import(
         "@/constants/projectGroupsSecrets.ts"
       );
