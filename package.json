@@ -10,6 +10,7 @@
     "preview": "nuxi preview",
     "postinstall": "nuxi prepare",
     "eslint": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
+    "eslint:fix": "eslint --fix --ext \".js,.ts,.vue\"  --ignore-path .gitignore .",
     "stylelint": "stylelint \"**/*.{css,scss,sass,html,vue}\" --ignore-path .gitignore",
     "prettier": "prettier --check .",
     "format": "prettier --write .",
