@@ -26,11 +26,11 @@ const handlePrint = () => print();
         class="inline-block border border-gray-200 h-16 px-5 relative"
         @click="handleSelectFile"
       >
+        <span>ファイル選択</span>
         <input
           type="file"
-          class="absolute left-0 top-0 w-full h-full ring-emerald-900 bg-amber-300"
+          class="absolute left-0 top-0 w-full h-full bg-amber-300 opacity-0"
         />
-        <span>ファイル選択</span>
       </button>
       <button
         class="inline-block border border-gray-200 h-16 px-5"
