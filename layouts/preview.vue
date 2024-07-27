@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { useConvertToXlsx } from "~/composables/useConvertXlsx";
 import { usePreviewFont } from "~/composables/usePreview.ts";
 
-const { convertTableToXlsx } = useConvertToXlsx();
 const { setRootFontSize } = usePreviewFont();
 
 const targetTable = ref<HTMLTableElement | null>(null);
@@ -11,13 +9,9 @@ onMounted(() => {
   setRootFontSize("2mm");
 });
 
-const toPrint = () => print();
+const handleSelectFile = () => {};
 
-const toXlsx = () => {
-  if (targetTable.value) {
-    convertTableToXlsx(targetTable.value);
-  }
-};
+const handlePrint = () => print();
 </script>
 
 <template>
@@ -29,16 +23,20 @@ const toXlsx = () => {
       class="print:hidden fixed left-0 bottom-0 w-full h-16 bg-gray-400 shadow-lg shadow-indigo-500/50"
     >
       <button
-        class="inline-block border border-gray-200 h-16 px-5"
-        @click="toPrint"
+        class="inline-block border border-gray-200 h-16 px-5 relative"
+        @click="handleSelectFile"
       >
-        印刷
+        <input
+          type="file"
+          class="absolute left-0 top-0 w-full h-full ring-emerald-900 bg-amber-300"
+        />
+        <span>ファイル選択</span>
       </button>
       <button
         class="inline-block border border-gray-200 h-16 px-5"
-        @click="toXlsx"
+        @click="handlePrint"
       >
-        XLSX
+        印刷
       </button>
     </footer>
   </div>
