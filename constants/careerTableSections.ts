@@ -16,7 +16,7 @@ export interface ProjectGroups {
   groups: ProjectGroup[];
 }
 
-type Selection = Document | ProjectGroups;
+export type Selection = Document | ProjectGroups;
 
 export const careerTableSections: Selection[] = [
   {

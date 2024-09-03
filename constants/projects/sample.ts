@@ -14,6 +14,7 @@ export const detail = `
 `;
 
 export const project__ = {
+  id: 0,
   title: "",
   detail,
   times: {
