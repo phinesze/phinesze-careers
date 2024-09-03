@@ -30,6 +30,12 @@ const handlePrint = () => print();
         <input
           type="file"
           class="absolute left-0 top-0 w-full h-full bg-amber-300 opacity-0"
+          @select="
+            (e) => {
+              console.log('=== file selected');
+              console.log(e);
+            }
+          "
         />
       </button>
       <button

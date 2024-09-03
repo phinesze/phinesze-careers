@@ -1,11 +1,21 @@
 <script setup lang="ts">
 import DateLabel from "../../atoms/DateLabel";
-import { careerTableSections } from "~/constants/careerTableSections";
+import {
+  careerTableSections,
+  ProjectGroups,
+  Selection,
+} from "~/constants/careerTableSections";
 import { projectGroups } from "~/constants/projectGroups.ts";
 
 const props = defineProps<{
   isSecret: boolean;
 }>();
+
+const loadedCareerTableSections = ref<Selection[]>(careerTableSections);
+
+const projectGroupsOfSelections = loadedCareerTableSections.value.find(
+  (s) => s.type === "project-groups",
+) as ProjectGroups;
 
 if (props.isSecret) {
   // projectGroupsSecrets.tsを読み込む
@@ -28,12 +38,10 @@ if (props.isSecret) {
   );
 
   // @ts-ignore
-  careerTableSections.find((s) => s.type === "project-groups").groups =
-    projectGroupsCopy;
+  projectGroupsOfSelections.groups = projectGroupsCopy;
 } else {
   // @ts-ignore
-  careerTableSections.find((s) => s.type === "project-groups").groups =
-    projectGroups;
+  projectGroupsOfSelections.groups = projectGroups;
 }
 </script>
 
@@ -55,7 +63,7 @@ if (props.isSecret) {
       <col class="w-[auto]" />
       <col class="w-[50mm]" />
     </colgroup>
-    <template v-for="(section, index) in careerTableSections">
+    <template v-for="(section, index) in loadedCareerTableSections">
       <CareerTableDocumentBody
         v-if="section.type === 'document'"
         :key="index"
