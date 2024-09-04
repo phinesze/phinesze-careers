@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { usePreviewFont } from "~/composables/usePreview.ts";
+import { useCareerTableSections } from "~/composables/useCareerTableSections.ts";
 
 const { setRootFontSize } = usePreviewFont();
 
@@ -9,7 +10,7 @@ onMounted(() => {
   setRootFontSize("2mm");
 });
 
-const handleSelectFile = () => {};
+const { handleSelectFile } = useCareerTableSections();
 
 const handlePrint = () => print();
 </script>
@@ -22,20 +23,12 @@ const handlePrint = () => print();
     <footer
       class="print:hidden fixed left-0 bottom-0 w-full h-16 bg-gray-400 shadow-lg shadow-indigo-500/50"
     >
-      <button
-        class="inline-block border border-gray-200 h-16 px-5 relative"
-        @click="handleSelectFile"
-      >
+      <button class="inline-block border border-gray-200 h-16 px-5 relative">
         <span>ファイル選択</span>
         <input
           type="file"
           class="absolute left-0 top-0 w-full h-full bg-amber-300 opacity-0"
-          @select="
-            (e) => {
-              console.log('=== file selected');
-              console.log(e);
-            }
-          "
+          @change="handleSelectFile"
         />
       </button>
       <button

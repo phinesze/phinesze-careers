@@ -1,47 +1,15 @@
 <script setup lang="ts">
 import DateLabel from "../../atoms/DateLabel";
-import {
-  careerTableSections,
-  ProjectGroups,
-  Selection,
-} from "~/constants/careerTableSections";
-import { projectGroups } from "~/constants/projectGroups.ts";
+import { useCareerTableSections } from "~/composables/useCareerTableSections.ts";
 
 const props = defineProps<{
   isSecret: boolean;
 }>();
 
-const loadedCareerTableSections = ref<Selection[]>(careerTableSections);
-
-const projectGroupsOfSelections = loadedCareerTableSections.value.find(
-  (s) => s.type === "project-groups",
-) as ProjectGroups;
+const { loadedCareerTableSections, convertToSecret } = useCareerTableSections();
 
 if (props.isSecret) {
-  // projectGroupsSecrets.tsを読み込む
-  const secrets = await useAsyncData("getSecrets", async () => {
-    let projectGroupsSecrets = {};
-    try {
-      projectGroupsSecrets = await import(
-        "@/constants/projectGroupsSecrets.ts"
-      );
-      return projectGroupsSecrets;
-    } catch (error) {
-      return {};
-    }
-  });
-
-  // @ts-ignore
-  const secretsArray = secrets.data.value.projectGroupsSecrets?.dataArray || {};
-  const projectGroupsCopy = projectGroups.map((group, index) =>
-    Object.assign({}, group, secretsArray[index]),
-  );
-
-  // @ts-ignore
-  projectGroupsOfSelections.groups = projectGroupsCopy;
-} else {
-  // @ts-ignore
-  projectGroupsOfSelections.groups = projectGroups;
+  convertToSecret();
 }
 </script>
 

@@ -19,6 +19,7 @@ export interface ProjectGroups {
 export type Selection = Document | ProjectGroups;
 
 export const careerTableSections: Selection[] = [
+  // TODO ここを外部のロードにする。
   {
     type: "document",
     label: "自己PR",
