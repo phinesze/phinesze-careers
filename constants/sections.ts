@@ -1,4 +1,4 @@
-import { about } from "~/constants/doduments/about";
+import { about } from "~/constants/doduments/about"; //
 import { frameworks } from "~/constants/doduments/frameworks";
 import { accounts } from "~/constants/doduments/accounts";
 import { projectGroups } from "~/constants/projectGroups";
@@ -18,8 +18,7 @@ export interface ProjectGroups {
 
 export type Selection = Document | ProjectGroups;
 
-export const careerTableSections: Selection[] = [
-  // TODO ここを外部のロードにする。
+export const sections: Selection[] = [
   {
     type: "document",
     label: "自己PR",
