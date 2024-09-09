@@ -1,27 +1,18 @@
 <script setup lang="ts">
-import DateLabel from "../../atoms/DateLabel";
+import DateLabel from "~/components/atoms/DateLabel";
 import { useCareerTableSections } from "~/composables/useCareerTableSections.ts";
 
-const props = defineProps<{
-  isSecret: boolean;
-}>();
-
-const { loadedCareerTableSections, convertToSecret } = useCareerTableSections();
-
-if (props.isSecret) {
-  convertToSecret();
-}
+const { loadedCareerTableSections, updatedAt, isSecrets } =
+  useCareerTableSections();
 </script>
 
 <template>
-  <table
-    :class="`table-fixed target-table ${props.isSecret ? 'secret' : null}`"
-  >
+  <table :class="`table-fixed target-table ${isSecrets ? 'secret' : null}`">
     <caption class="relative mb-5">
       <div class="text-5xl">職務経歴書</div>
-      <div v-if="props.isSecret" class="text-xl">機密要素あり</div>
+      <div v-if="isSecrets" class="text-xl">機密要素あり</div>
       <div class="absolute right-0 bottom-0 text-sm">
-        <DateLabel value="2024-07-01" /> 更新
+        <DateLabel v-if="updatedAt" :value="updatedAt" /> 更新
       </div>
     </caption>
     <colgroup>
