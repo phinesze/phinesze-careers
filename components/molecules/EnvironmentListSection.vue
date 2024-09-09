@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { CareerEnvironmentList } from "~/types/Project";
+import { CareerEnvironmentList } from "~/types/CareerEnvironmentList.ts";
 
 defineProps<{
   environments: CareerEnvironmentList;
