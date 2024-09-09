@@ -11,7 +11,7 @@
     "dev": "nuxi dev",
     "generate": "nuxi generate",
     "preview": "nuxi preview",
-    "postinstall": "nuxi prepare",
+    "postinstall": "",
     "eslint": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
     "eslint:fix": "eslint --fix --ext \".js,.ts,.vue\"  --ignore-path .gitignore .",
     "stylelint": "stylelint \"**/*.{css,scss,sass,html,vue}\" --ignore-path .gitignore",
