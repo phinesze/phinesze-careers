@@ -1,4 +1,4 @@
-import { ProjectGroups, Selection, Selections } from "~/constants/sections";
+import { ProjectGroups, Selection, Selections } from "~/constants/types";
 
 const loadedCareerTableSections = ref<Selection[]>([]);
 const updatedAt = ref("");
