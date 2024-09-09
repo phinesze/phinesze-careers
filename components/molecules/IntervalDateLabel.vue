@@ -18,7 +18,7 @@ const months = computed(() => {
 });
 
 const yearCount = computed(() =>
-  months.value ? Math.floor(months.value / 12) : null
+  months.value ? Math.floor(months.value / 12) : null,
 );
 </script>
 

@@ -1,9 +1,18 @@
+<script setup lang="ts">
+import DateLabel from "~/components/atoms/DateLabel";
+import { useCareerTableSections } from "~/composables/useCareerTableSections.ts";
+
+const { loadedCareerTableSections, updatedAt, isSecrets } =
+  useCareerTableSections();
+</script>
+
 <template>
-  <table class="table-fixed target-table">
+  <table :class="`table-fixed target-table ${isSecrets ? 'secret' : null}`">
     <caption class="relative mb-5">
       <div class="text-5xl">職務経歴書</div>
+      <div v-if="isSecrets" class="text-xl">機密要素あり</div>
       <div class="absolute right-0 bottom-0 text-sm">
-        <DateLabel value="2023-04-13" /> 更新
+        <DateLabel v-if="updatedAt" :value="updatedAt" /> 更新
       </div>
     </caption>
     <colgroup>
@@ -13,16 +22,18 @@
       <col class="w-[auto]" />
       <col class="w-[50mm]" />
     </colgroup>
-    <CareerTableDocumentBody label="自己PR" markdown-path="/about" />
-    <CareerTableDocumentBody label="主な経験" markdown-path="/frameworks" />
-    <CareerTableDocumentBody label="アカウント" markdown-path="/accounts" />
-    <CareerTableProjectsBody />
-    <CareerTableDocumentBody label="一問一答" markdown-path="/supplement" />
+    <template v-for="(section, index) in loadedCareerTableSections">
+      <CareerTableDocumentBody
+        v-if="section.type === 'document'"
+        :key="index"
+        :markdown-text="section.detail"
+        :label="section.label"
+      />
+      <CareerTableProjectsGroupsBody
+        v-if="section.type === 'project-groups'"
+        :key="index"
+        :groups="section.groups"
+      />
+    </template>
   </table>
 </template>
-<script>
-import DateLabel from "../../atoms/DateLabel";
-export default {
-  components: { DateLabel },
-};
-</script>

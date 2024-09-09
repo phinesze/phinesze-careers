@@ -1,8 +1,14 @@
 <script setup lang="ts">
-const router = useRouter();
-router.push("/preview");
+definePageMeta({
+  layout: "preview",
+});
+
+useHead({
+  title: "出力プレビュー",
+  meta: [{ name: "description", content: "pdf出力用のプレビューページです。" }],
+});
 </script>
 
 <template>
-  <NuxtLink to="/preview">プレビューページへ</NuxtLink>
+  <CareerTable />
 </template>

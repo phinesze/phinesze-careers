@@ -6,7 +6,7 @@ const props = defineProps<{
 const teamNumberStr = computed(() =>
   Array.isArray(props.value)
     ? `${props.value[0]}~${props.value[1]}`
-    : `${props.value}`
+    : `${props.value}`,
 );
 </script>
 

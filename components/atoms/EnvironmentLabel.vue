@@ -15,7 +15,6 @@ const elementOptions = computed(() => {
 </script>
 
 <template>
-  <!--  <div class="inline-block bg-amber-200 rounded-2xl px-2 m-0.5">　TODO こちらのスタイルを検討中-->
   <div class="inline-block">
     <span>{{ elementName }}</span>
     <template v-if="elementOptions">
