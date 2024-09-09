@@ -1,7 +1,4 @@
-export type CareerEnvironment =
-  | string
-  | [string, { version?: string | number }?];
-export type CareerEnvironmentList = { [key: string]: CareerEnvironment[] };
+import { CareerEnvironmentList } from "~/types/CareerEnvironmentList.ts";
 
 export interface Project {
   id: number;
