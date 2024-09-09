@@ -1,17 +1,14 @@
 <script setup lang="ts">
-import { usePreviewFont } from "~/composables/usePreview.ts";
-const { setRootFontSize } = usePreviewFont();
+definePageMeta({
+  layout: "preview",
+});
 
-onMounted(() => {
-  setRootFontSize("");
+useHead({
+  title: "出力プレビュー",
+  meta: [{ name: "description", content: "pdf出力用のプレビューページです。" }],
 });
 </script>
 
 <template>
-  <section>
-    <NuxtLink class="block" to="/preview">プレビューページへ</NuxtLink>
-    <NuxtLink class="block text-2xl" to="/preview?secret=1"
-      >機密プレビューページへ</NuxtLink
-    >
-  </section>
+  <CareerTable />
 </template>
