@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ProjectGroup } from "~/types/ProjectGroup";
+import { useCareerTableSections } from "~/composables/useCareerTableSections.ts";
+const { isSecrets } = useCareerTableSections();
 
 const props = defineProps<{
   groups: ProjectGroup[];
@@ -23,7 +25,9 @@ const getRowSpan = (career: any) => {
     >
       <tr>
         <td class="bg-gray-400" :rowspan="getRowSpan(career)">
-          {{ group.company }}
+          {{
+            isSecrets ? group.company ?? group.companyAlias : group.companyAlias
+          }}
         </td>
         <td class="bg-lime-300" :rowspan="getRowSpan(career)">
           #{{ career.id }}

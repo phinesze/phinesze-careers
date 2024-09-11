@@ -1,8 +1,13 @@
-import { ProjectGroups, Selection, Selections } from "~/constants/types";
+import { ProjectGroups } from "~/types/ProjectGroups.ts";
+import { Selections } from "~/types/Selections.ts";
+import { Selection } from "~/types/Selection.ts";
 
 const loadedCareerTableSections = ref<Selection[]>([]);
 const updatedAt = ref("");
-const isSecrets = ref(false);
+
+const isSecrets = computed(() => {
+  return Boolean(useRoute().query.is_secrets);
+});
 
 export const useCareerTableSections = () => {
   const projectGroupsOfSelections = loadedCareerTableSections.value.find(
@@ -30,7 +35,6 @@ export const useCareerTableSections = () => {
       const parsedSelectionData = JSON.parse(json) as Selections;
       loadedCareerTableSections.value = parsedSelectionData.selections;
       updatedAt.value = parsedSelectionData.updatedAt;
-      isSecrets.value = parsedSelectionData.isSecrets;
     };
 
     reader.readAsText(file);
