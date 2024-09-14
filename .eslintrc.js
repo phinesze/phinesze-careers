@@ -11,7 +11,6 @@ module.exports = {
   ],
   overrides: [],
   parserOptions: {
-    parser: "@typescript-eslint/parser",
     ecmaVersion: "latest",
   },
   plugins: ["vue"],
