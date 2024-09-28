@@ -19,12 +19,15 @@ const getRowSpan = (career: any) => {
 <template>
   <template v-for="group in props.groups as ProjectGroup[]">
     <tbody
-      v-for="career in group.projects"
+      v-for="(career, index) in group.projects"
       :key="career.id"
       class="career-row break-inside-avoid"
     >
       <tr>
-        <td class="bg-gray-400" :rowspan="getRowSpan(career)">
+        <td
+          :class="`bg-gray-400 ${index == 0 ? 'border-b-0' : 'border-y-0'}`"
+          :rowspan="getRowSpan(career)"
+        >
           {{
             isSecrets ? group.company ?? group.companyAlias : group.companyAlias
           }}
