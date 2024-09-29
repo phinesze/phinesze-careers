@@ -19,12 +19,12 @@ const getRowSpan = (career: any) => {
 
 <template>
   <template
-    v-for="(group, groupIndex) in props.groups as ProjectGroup[]"
-    :key="groupIndex"
+    v-for="(group) in props.groups as ProjectGroup[]"
+    :key="group.companyAlias"
   >
-    <tbody>
+    <tbody class="break-after-avoid">
       <tr>
-        <td class="bg-blue-100 font-bold" colspan="5">
+        <td class="bg-blue-100 border-t-[3px] pl-2 font-bold" colspan="5">
           {{
             isSecrets ? group.company ?? group.companyAlias : group.companyAlias
           }}
