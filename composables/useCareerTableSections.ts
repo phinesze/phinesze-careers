@@ -10,7 +10,7 @@ const isSecrets = computed(() => {
 });
 
 export const useCareerTableSections = () => {
-  const projectGroupsOfSelections = loadedCareerTableSections.value.find(
+  const projectGroupsOfSections = loadedCareerTableSections.value.find(
     (s) => s.type === "project-groups",
   ) as ProjectGroups | undefined;
 
@@ -32,9 +32,9 @@ export const useCareerTableSections = () => {
         alert("error");
         return;
       }
-      const parsedSelectionData = JSON.parse(json) as Sections;
-      loadedCareerTableSections.value = parsedSelectionData.selections;
-      updatedAt.value = parsedSelectionData.updatedAt;
+      const parsedSectionData = JSON.parse(json) as Sections;
+      loadedCareerTableSections.value = parsedSectionData.sections;
+      updatedAt.value = parsedSectionData.updatedAt;
     };
 
     reader.readAsText(file);
@@ -43,7 +43,7 @@ export const useCareerTableSections = () => {
     loadedCareerTableSections,
     updatedAt,
     isSecrets,
-    projectGroupsOfSelections,
+    projectGroupsOfSections,
     handleSelectFile,
   };
 };
