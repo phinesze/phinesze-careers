@@ -1,8 +1,8 @@
 import { ProjectGroups } from "~/types/ProjectGroups.ts";
-import { Selections } from "~/types/Selections.ts";
-import { Selection } from "~/types/Selection.ts";
+import { Sections } from "~/types/Sections.ts";
+import { Section } from "~/types/Section.ts";
 
-const loadedCareerTableSections = ref<Selection[]>([]);
+const loadedCareerTableSections = ref<Section[]>([]);
 const updatedAt = ref("");
 
 const isSecrets = computed(() => {
@@ -32,7 +32,7 @@ export const useCareerTableSections = () => {
         alert("error");
         return;
       }
-      const parsedSelectionData = JSON.parse(json) as Selections;
+      const parsedSelectionData = JSON.parse(json) as Sections;
       loadedCareerTableSections.value = parsedSelectionData.selections;
       updatedAt.value = parsedSelectionData.updatedAt;
     };
