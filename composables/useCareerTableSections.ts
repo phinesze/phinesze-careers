@@ -1,4 +1,4 @@
-import { ProjectGroups } from "~/types/ProjectGroups.ts";
+import { ProjectGroupSection } from "~/types/ProjectGroupSection.ts";
 import { BiographyData } from "~/types/BiographyData.ts";
 import { Section } from "~/types/Section.ts";
 
@@ -12,7 +12,7 @@ const isSecrets = computed(() => {
 export const useCareerTableSections = () => {
   const projectGroupsOfSections = loadedCareerTableSections.value.find(
     (s) => s.type === "project-groups",
-  ) as ProjectGroups | undefined;
+  ) as ProjectGroupSection | undefined;
 
   const handleSelectFile = (event: Event) => {
     const file = (event.target as HTMLInputElement)?.files?.[0];
