@@ -1,6 +1,9 @@
 import { Section } from "~/types/Section.ts";
 
-export interface Sections {
+/**
+ * 経歴データのルート
+ */
+export interface BiographyData {
   updatedAt: string;
   sections: Section[];
 }

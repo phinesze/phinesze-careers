@@ -1,5 +1,5 @@
 import { ProjectGroups } from "~/types/ProjectGroups.ts";
-import { Sections } from "~/types/Sections.ts";
+import { BiographyData } from "~/types/BiographyData.ts";
 import { Section } from "~/types/Section.ts";
 
 const loadedCareerTableSections = ref<Section[]>([]);
@@ -32,7 +32,7 @@ export const useCareerTableSections = () => {
         alert("error");
         return;
       }
-      const parsedSectionData = JSON.parse(json) as Sections;
+      const parsedSectionData = JSON.parse(json) as BiographyData;
       loadedCareerTableSections.value = parsedSectionData.sections;
       updatedAt.value = parsedSectionData.updatedAt;
     };

@@ -25,7 +25,7 @@ const handlePrint = () => print();
       class="print:hidden fixed left-0 bottom-0 w-full h-16 bg-gray-400 shadow-lg shadow-indigo-500/50"
     >
       <button class="inline-block border border-gray-200 h-16 px-5 relative">
-        <span>sectionsData JSONファイル選択</span>
+        <span>biographyData JSONファイル選択</span>
         <input
           type="file"
           accept="application/json"
