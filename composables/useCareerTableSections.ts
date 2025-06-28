@@ -1,8 +1,8 @@
-import { ProjectGroups } from "~/types/ProjectGroups.ts";
-import { Selections } from "~/types/Selections.ts";
-import { Selection } from "~/types/Selection.ts";
+import { ProjectGroupSection } from "~/types/ProjectGroupSection.ts";
+import { BiographyData } from "~/types/BiographyData.ts";
+import { Section } from "~/types/Section.ts";
 
-const loadedCareerTableSections = ref<Selection[]>([]);
+const loadedCareerTableSections = ref<Section[]>([]);
 const updatedAt = ref("");
 
 const isSecrets = computed(() => {
@@ -10,9 +10,9 @@ const isSecrets = computed(() => {
 });
 
 export const useCareerTableSections = () => {
-  const projectGroupsOfSelections = loadedCareerTableSections.value.find(
+  const projectGroupsOfSections = loadedCareerTableSections.value.find(
     (s) => s.type === "project-groups",
-  ) as ProjectGroups | undefined;
+  ) as ProjectGroupSection | undefined;
 
   const handleSelectFile = (event: Event) => {
     const file = (event.target as HTMLInputElement)?.files?.[0];
@@ -32,9 +32,9 @@ export const useCareerTableSections = () => {
         alert("error");
         return;
       }
-      const parsedSelectionData = JSON.parse(json) as Selections;
-      loadedCareerTableSections.value = parsedSelectionData.selections;
-      updatedAt.value = parsedSelectionData.updatedAt;
+      const parsedSectionData = JSON.parse(json) as BiographyData;
+      loadedCareerTableSections.value = parsedSectionData.sections;
+      updatedAt.value = parsedSectionData.updatedAt;
     };
 
     reader.readAsText(file);
@@ -43,7 +43,7 @@ export const useCareerTableSections = () => {
     loadedCareerTableSections,
     updatedAt,
     isSecrets,
-    projectGroupsOfSelections,
+    projectGroupsOfSections,
     handleSelectFile,
   };
 };

@@ -4,6 +4,7 @@ import { useCareerTableSections } from "~/composables/useCareerTableSections.ts"
 const { isSecrets } = useCareerTableSections();
 
 const props = defineProps<{
+  index: number;
   groups: ProjectGroup[];
 }>();
 
@@ -17,19 +18,30 @@ const getRowSpan = (career: any) => {
 </script>
 
 <template>
-  <template v-for="group in props.groups as ProjectGroup[]">
+  <template
+    v-for="(group) in props.groups as ProjectGroup[]"
+    :key="group.companyAlias"
+  >
+    <tbody class="break-after-avoid">
+      <tr>
+        <td class="bg-blue-100 border-t-[3px] pl-2 font-bold" colspan="5">
+          {{
+            isSecrets ? group.company ?? group.companyAlias : group.companyAlias
+          }}
+        </td>
+      </tr>
+    </tbody>
     <tbody
       v-for="career in group.projects"
       :key="career.id"
       class="career-row break-inside-avoid"
     >
       <tr>
-        <td class="bg-gray-400" :rowspan="getRowSpan(career)">
-          {{
-            isSecrets ? group.company ?? group.companyAlias : group.companyAlias
-          }}
-        </td>
-        <td class="bg-lime-300" :rowspan="getRowSpan(career)">
+        <td
+          class="bg-lime-300 text-center"
+          colspan="2"
+          :rowspan="getRowSpan(career)"
+        >
           #{{ career.id }}
         </td>
         <th class="p-2">期間</th>
