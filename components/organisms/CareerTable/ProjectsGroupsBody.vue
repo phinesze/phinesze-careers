@@ -43,25 +43,27 @@ const getRowSpan = (career: any) => {
         <!-- 1A: プロジェクト番号 -->
         <td
           class="bg-lime-300 text-center"
-          colspan="2"
+          colspan="1"
           :rowspan="getRowSpan(career)"
         >
           #{{ career.id }}
         </td>
-        <!-- 1B: 期間タイトル -->
-        <th class="p-2">期間</th>
-        <!-- 1C: 本文タイトル -->
-        <td class="font-bold p-2 bg-cyan-100">{{ career.title }}</td>
+        <!-- 1B:1C: 期間タイトル -->
+        <th class="p-2" colspan="2">期間</th>
+        <!-- 1D: 本文タイトル -->
+        <td class="font-bold p-2 bg-cyan-100" colspan="1">
+          {{ career.title }}
+        </td>
         <!-- 1D: 言語・フレームワークタイトル -->
         <th class="p-2">言語・フレームワーク</th>
       </tr>
       <!-- 2行目: 文章部分（チーム人数を除く） -->
       <tr>
-        <!-- 2B: 期間 -->
-        <td>
+        <!-- 2B:2C 期間 -->
+        <td colspan="2">
           <IntervalDateLabel v-if="career.times" :value="career.times" />
         </td>
-        <!-- 2C: 本文  -->
+        <!-- 2D: 本文  -->
         <td class="align-top" :rowspan="getRowSpan(career) - 1">
           <MarkdownDocument :markdown-text="career.detail" />
         </td>
@@ -75,13 +77,13 @@ const getRowSpan = (career: any) => {
       </tr>
       <!-- 3行目: タイトル（チーム人数） -->
       <tr v-if="career.teams" class="h-10">
-        <!-- 3B: タイトル（チーム人数） -->
-        <th>チーム人数</th>
+        <!-- 3B:3C: タイトル（チーム人数） -->
+        <th colspan="2">チーム人数</th>
       </tr>
-      <!-- 3行目: 文章部分（チーム人数） -->
+      <!-- 4行目: 文章部分（チーム人数） -->
       <tr v-if="career.teams">
-        <!-- 3B: チーム人数 -->
-        <td class="text-center">
+        <!-- 4B:4C: チーム人数 -->
+        <td class="text-center" colspan="2">
           <ul class="inline-block w-fit">
             <li
               v-for="(teamNumber, team) in career.teams"

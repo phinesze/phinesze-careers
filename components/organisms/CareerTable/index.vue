@@ -16,15 +16,15 @@ const { loadedCareerTableSections, updatedAt, isSecrets } =
       </div>
     </caption>
     <colgroup>
-      <!-- A: プロジェクト番号（前半）-->
+      <!-- A: 自己PR見出し、プロジェクト番号 -->
       <col class="w-[8mm]" />
-      <!-- A: プロジェクト番号（後半） -->
+      <!-- B: 自己PR見出し2列目 -->
       <col class="w-0.5 w-[8mm]" />
-      <!-- B: 期間、チーム人数 -->
+      <!-- C: 期間、チーム人数 -->
       <col class="w-[21mm]" />
-      <!-- C: 本文  -->
+      <!-- D: 本文  -->
       <col class="w-[auto]" />
-      <!-- D: 言語・フレームワーク -->
+      <!-- E: 言語・フレームワーク -->
       <col class="w-[50mm]" />
     </colgroup>
     <template v-for="(section, index) in loadedCareerTableSections">
