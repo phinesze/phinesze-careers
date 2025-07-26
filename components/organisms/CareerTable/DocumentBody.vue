@@ -8,9 +8,16 @@ defineProps<{
 <template>
   <tbody>
     <tr>
-      <th class="p-2" colspan="2">{{ label }}</th>
-      <td class="p-4 align-top" colspan="3">
-        <MarkdownDocument :markdown-text="markdownText" />
+      <!-- A,B,C,D 本文 -->
+      <td class="p-0 align-top" colspan="4">
+        <div v-if="label" class="font-bold bg-gray-300 p-2">
+          {{ label }}
+        </div>
+        <MarkdownDocument
+          class="p-4"
+          :label="label"
+          :markdown-text="markdownText"
+        />
       </td>
     </tr>
   </tbody>

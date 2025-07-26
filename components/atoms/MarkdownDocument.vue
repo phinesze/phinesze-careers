@@ -3,6 +3,7 @@ import markdownit from "markdown-it";
 const md = markdownit();
 
 const props = defineProps<{
+  label?: string;
   markdownText?: string;
 }>();
 
