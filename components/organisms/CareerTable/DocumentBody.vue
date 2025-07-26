@@ -8,9 +8,9 @@ defineProps<{
 <template>
   <tbody>
     <tr>
-      <th class="p-2" colspan="2">{{ label }}</th>
-      <td class="p-4 align-top" colspan="3">
-        <MarkdownDocument :markdown-text="markdownText" />
+      <!-- A,B,C,D 本文 -->
+      <td class="p-4 align-top" colspan="4">
+        <MarkdownDocument :label="label" :markdown-text="markdownText" />
       </td>
     </tr>
   </tbody>

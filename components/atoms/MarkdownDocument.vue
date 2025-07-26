@@ -3,6 +3,7 @@ import markdownit from "markdown-it";
 const md = markdownit();
 
 const props = defineProps<{
+  label?: string;
   markdownText?: string;
 }>();
 
@@ -12,6 +13,9 @@ const renderedHtml = computed(() => {
 </script>
 
 <template>
+  <p v-if="label" class="font-bold mt-0 mx-0 bg-gray-300 text-2xl p-2">
+    {{ label }}
+  </p>
   <section v-if="markdownText">
     <!-- eslint-disable-next-line vue/no-v-html -->
     <div v-html="renderedHtml" />
