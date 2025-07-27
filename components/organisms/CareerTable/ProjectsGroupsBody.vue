@@ -7,14 +7,6 @@ const props = defineProps<{
   index: number;
   groups: ProjectGroup[];
 }>();
-
-const getRowSpan = (career: any) => {
-  let rowspan = 2;
-  if (career.teams) {
-    rowspan += 2;
-  }
-  return rowspan;
-};
 </script>
 
 <template>
@@ -26,7 +18,7 @@ const getRowSpan = (career: any) => {
       <!-- ヘッダー1行目: 会社名 -->
       <tr>
         <!-- 1A: 会社名 -->
-        <td class="bg-blue-100 border-t-[3px] pl-2 font-bold" colspan="4">
+        <td class="bg-blue-100 border-t-[3px] pl-2 font-bold" colspan="3">
           {{
             isSecrets ? group.company ?? group.companyAlias : group.companyAlias
           }}
@@ -41,50 +33,28 @@ const getRowSpan = (career: any) => {
       <!-- 1行目: タイトル（チーム人数を除く） -->
       <tr>
         <!-- 1A: プロジェクト番号 -->
-        <td
-          class="bg-lime-300 text-center"
-          colspan="1"
-          :rowspan="getRowSpan(career)"
-        >
+        <td class="bg-lime-300 text-center" rowspan="2">
           #{{ career.id }}
+          <IntervalDateLabel v-if="career.times" :value="career.times" />
         </td>
-        <!-- 1B: 期間タイトル -->
-        <th class="p-2" colspan="1">期間</th>
-        <!-- 1C: 本文タイトル -->
-        <td class="font-bold p-2 bg-cyan-100" colspan="1">
+        <!-- 1B: 本文タイトル -->
+        <td class="font-bold p-2 bg-cyan-100">
           {{ career.title }}
         </td>
-        <!-- 1D: 言語・フレームワークタイトル -->
-        <th class="p-2">言語・フレームワーク</th>
+        <!-- 1C: チーム人数・言語・フレームワークタイトル -->
+        <th class="p-2">チーム人数・言語・フレームワーク</th>
       </tr>
       <!-- 2行目: 文章部分（チーム人数を除く） -->
       <tr>
-        <!-- 2B 期間 -->
-        <td colspan="1">
-          <IntervalDateLabel v-if="career.times" :value="career.times" />
-        </td>
-        <!-- 2C: 本文  -->
-        <td class="align-top" :rowspan="getRowSpan(career) - 1">
+        <!-- 2B: 本文  -->
+        <td class="align-top">
           <MarkdownDocument :markdown-text="career.detail" />
         </td>
-        <!-- 2D: 言語・フレームワーク -->
-        <td class="align-top" :rowspan="getRowSpan(career) - 1">
-          <EnvironmentListSection
-            v-if="career.environments"
-            :environments="career.environments"
-          />
-        </td>
-      </tr>
-      <!-- 3行目: タイトル（チーム人数） -->
-      <tr v-if="career.teams" class="h-10">
-        <!-- 3B: タイトル（チーム人数） -->
-        <th colspan="1">チーム人数</th>
-      </tr>
-      <!-- 4行目: 文章部分（チーム人数） -->
-      <tr v-if="career.teams">
-        <!-- 4B: チーム人数 -->
-        <td class="text-center" colspan="1">
-          <ul class="inline-block w-fit">
+        <!-- 2C: チーム人数・言語・フレームワーク -->
+        <td class="align-top">
+          <!-- チーム人数-->
+          <div v-if="career.teams" class="text-xl font-bold">チーム人数</div>
+          <ul v-if="career.teams" class="inline-block w-fit">
             <li
               v-for="(teamNumber, team) in career.teams"
               :key="team"
@@ -94,6 +64,12 @@ const getRowSpan = (career: any) => {
               <TeamNumberLabel :value="teamNumber" />
             </li>
           </ul>
+          <div class="text-xl font-bold">言語・フレームワーク</div>
+          <!-- 言語・フレームワーク -->
+          <EnvironmentListSection
+            v-if="career.environments"
+            :environments="career.environments"
+          />
         </td>
       </tr>
     </tbody>

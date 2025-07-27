@@ -18,11 +18,9 @@ const { loadedCareerTableSections, updatedAt, isSecrets } =
     <colgroup>
       <!-- A: 自己PR見出し、プロジェクト番号 -->
       <col class="w-[16mm]" />
-      <!-- B: 期間、チーム人数 -->
-      <col class="w-[21mm]" />
-      <!-- C: 本文  -->
+      <!-- B: 本文  -->
       <col class="w-[auto]" />
-      <!-- D: 言語・フレームワーク -->
+      <!-- C: チーム人数・言語・フレームワーク -->
       <col class="w-[50mm]" />
     </colgroup>
     <template v-for="(section, index) in loadedCareerTableSections">
