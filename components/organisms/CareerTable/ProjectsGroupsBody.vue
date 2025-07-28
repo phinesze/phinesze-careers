@@ -50,14 +50,15 @@ const props = defineProps<{
               <!-- 本文 -->
               <MarkdownDocument
                 :markdown-text="career.detail"
-                class="w-0 flex-grow"
+                class="w-0 flex-grow px-2 py-4"
               />
-              <div class="align-top w-[50mm] flex-grow-0">
-                <!-- チーム人数-->
-                <div v-if="career.teams" class="text-xl font-bold">
+              <!--チーム人数、言語・フレームワーク -->
+              <div class="align-top w-[50mm] flex-grow-0 pt-4">
+                <!-- チーム人数 -->
+                <div v-if="career.teams" class="bg-gray-200 p-0.5 font-bold">
                   チーム人数
                 </div>
-                <ul v-if="career.teams" class="inline-block w-fit">
+                <ul v-if="career.teams" class="inline-block w-fit p-2">
                   <li
                     v-for="(teamNumber, team) in career.teams"
                     :key="team"
@@ -67,12 +68,17 @@ const props = defineProps<{
                     <TeamNumberLabel :value="teamNumber" />
                   </li>
                 </ul>
-                <div class="text-xl font-bold">言語・フレームワーク</div>
+
                 <!-- 言語・フレームワーク -->
-                <EnvironmentListSection
-                  v-if="career.environments"
-                  :environments="career.environments"
-                />
+                <div class="bg-gray-200 p-0.5 font-bold">
+                  言語・フレームワーク
+                </div>
+                <div class="p-2">
+                  <EnvironmentListSection
+                    v-if="career.environments"
+                    :environments="career.environments"
+                  />
+                </div>
               </div>
             </div>
           </div>
