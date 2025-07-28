@@ -29,7 +29,9 @@ const props = defineProps<{
       <div class="align-top flex p-0">
         <!-- 番号・期間 -->
         <div class="w-[20mm]">
-          <div class="flex items-center h-full bg-lime-300 text-center">
+          <div
+            class="flex items-center border-r-2 border-black h-full bg-lime-300 text-center"
+          >
             <div class="text-center">
               #{{ career.id }}
               <IntervalDateLabel v-if="career.times" :value="career.times" />
@@ -39,7 +41,9 @@ const props = defineProps<{
         <!-- 本文タイトル、本文、チーム人数・言語・フレームワーク -->
         <div class="w-full">
           <!-- 本文タイトル-->
-          <div class="font-bold p-2 bg-cyan-100 flex">{{ career.title }}</div>
+          <div class="font-bold p-2 bg-cyan-100 border-y-2 border-black flex">
+            {{ career.title }}
+          </div>
           <div class="flex">
             <!-- 本文 -->
             <MarkdownDocument
