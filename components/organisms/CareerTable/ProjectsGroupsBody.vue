@@ -14,76 +14,69 @@ const props = defineProps<{
     v-for="(group) in props.groups as ProjectGroup[]"
     :key="group.companyAlias"
   >
-    <tbody class="break-after-avoid">
-      <!-- ヘッダー行: 会社名 -->
-      <tr>
-        <!-- 会社名 -->
-        <td class="bg-blue-100 border-t-[3px] pl-2 font-bold">
-          {{
-            isSecrets ? group.company ?? group.companyAlias : group.companyAlias
-          }}
-        </td>
-      </tr>
-    </tbody>
-    <tbody
+    <!-- 会社名 -->
+    <div
+      class="bg-blue-100 border-t-2 border-black p-2 font-bold break-after-avoid"
+    >
+      {{ isSecrets ? group.company ?? group.companyAlias : group.companyAlias }}
+    </div>
+    <section
       v-for="career in group.projects"
       :key="career.id"
       class="career-row break-inside-avoid"
     >
       <!-- 文章行部分 -->
-      <tr>
-        <td class="align-top flex p-0">
-          <!-- 番号・期間 -->
-          <div class="w-[20mm]">
-            <div class="flex items-center h-full bg-lime-300 text-center">
-              <div class="text-center">
-                #{{ career.id }}
-                <IntervalDateLabel v-if="career.times" :value="career.times" />
-              </div>
+      <div class="align-top flex p-0">
+        <!-- 番号・期間 -->
+        <div class="w-[20mm]">
+          <div class="flex items-center h-full bg-lime-300 text-center">
+            <div class="text-center">
+              #{{ career.id }}
+              <IntervalDateLabel v-if="career.times" :value="career.times" />
             </div>
           </div>
-          <!-- 本文タイトル、本文、チーム人数・言語・フレームワーク -->
-          <div class="w-full">
-            <!-- 本文タイトル-->
-            <div class="font-bold p-2 bg-cyan-100 flex">{{ career.title }}</div>
-            <div class="flex">
-              <!-- 本文 -->
-              <MarkdownDocument
-                :markdown-text="career.detail"
-                class="w-0 flex-grow px-2 py-4"
-              />
-              <!--チーム人数、言語・フレームワーク -->
-              <div class="align-top w-[50mm] flex-grow-0 pt-4">
-                <!-- チーム人数 -->
-                <div v-if="career.teams" class="bg-gray-200 p-0.5 font-bold">
-                  チーム人数
-                </div>
-                <ul v-if="career.teams" class="inline-block w-fit p-2">
-                  <li
-                    v-for="(teamNumber, team) in career.teams"
-                    :key="team"
-                    class="text-left"
-                  >
-                    {{ team }}:
-                    <TeamNumberLabel :value="teamNumber" />
-                  </li>
-                </ul>
+        </div>
+        <!-- 本文タイトル、本文、チーム人数・言語・フレームワーク -->
+        <div class="w-full">
+          <!-- 本文タイトル-->
+          <div class="font-bold p-2 bg-cyan-100 flex">{{ career.title }}</div>
+          <div class="flex">
+            <!-- 本文 -->
+            <MarkdownDocument
+              :markdown-text="career.detail"
+              class="w-0 flex-grow px-2 py-4"
+            />
+            <!--チーム人数、言語・フレームワーク -->
+            <div class="align-top w-[50mm] flex-grow-0 pt-4">
+              <!-- チーム人数 -->
+              <div v-if="career.teams" class="bg-gray-200 p-0.5 font-bold">
+                チーム人数
+              </div>
+              <ul v-if="career.teams" class="inline-block w-fit p-2">
+                <li
+                  v-for="(teamNumber, team) in career.teams"
+                  :key="team"
+                  class="text-left"
+                >
+                  {{ team }}:
+                  <TeamNumberLabel :value="teamNumber" />
+                </li>
+              </ul>
 
-                <!-- 言語・フレームワーク -->
-                <div class="bg-gray-200 p-0.5 font-bold">
-                  言語・フレームワーク
-                </div>
-                <div class="p-2">
-                  <EnvironmentListSection
-                    v-if="career.environments"
-                    :environments="career.environments"
-                  />
-                </div>
+              <!-- 言語・フレームワーク -->
+              <div class="bg-gray-200 p-0.5 font-bold">
+                言語・フレームワーク
+              </div>
+              <div class="p-2">
+                <EnvironmentListSection
+                  v-if="career.environments"
+                  :environments="career.environments"
+                />
               </div>
             </div>
           </div>
-        </td>
-      </tr>
-    </tbody>
+        </div>
+      </div>
+    </section>
   </template>
 </template>
