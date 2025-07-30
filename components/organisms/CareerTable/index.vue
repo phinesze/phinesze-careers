@@ -14,7 +14,10 @@ const { loadedCareerTableSections, updatedAt, isSecrets } =
       <DateLabel v-if="updatedAt" :value="updatedAt" /> 更新
     </div>
   </section>
-  <section :class="`border-2 border-black ${isSecrets ? 'secret' : null}`">
+  <section
+    v-if="loadedCareerTableSections.length"
+    :class="`border-2 border-black ${isSecrets ? 'secret' : null}`"
+  >
     <template v-for="(section, index) in loadedCareerTableSections">
       <CareerTableDocumentBody
         v-if="section.type === 'document'"
@@ -28,5 +31,10 @@ const { loadedCareerTableSections, updatedAt, isSecrets } =
         :groups="section.groups"
       />
     </template>
+  </section>
+  <section v-else>
+    <div class="mt-8 text-3xl text-center">
+      「biographyData.jsonファイル選択」からファイルを選択してください
+    </div>
   </section>
 </template>
