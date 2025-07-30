@@ -8,7 +8,7 @@ const { loadedCareerTableSections, updatedAt, isSecrets } =
 
 <template>
   <section class="relative mb-5 border-black">
-    <div class="text-5xl">職務経歴書</div>
+    <div class="text-5xl text-center">職務経歴書</div>
     <div v-if="isSecrets" class="text-xl">機密要素あり</div>
     <div class="absolute right-0 bottom-0 text-sm">
       <DateLabel v-if="updatedAt" :value="updatedAt" /> 更新
