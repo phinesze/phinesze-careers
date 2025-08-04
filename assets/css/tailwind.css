@@ -15,6 +15,12 @@
     @apply mb-[2.5mm];
   }
 
+  /* careerテーブルセクション本体 */
+  .career-section, .career-section * {
+    @apply border-black;
+  }
+
+  /* テーブル関連 */
   table,
   thead,
   tbody,

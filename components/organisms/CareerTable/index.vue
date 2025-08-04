@@ -7,7 +7,7 @@ const { loadedCareerTableSections, updatedAt, isSecrets } =
 </script>
 
 <template>
-  <section class="relative mb-5 border-black">
+  <section class="relative mb-5">
     <div class="text-5xl text-center">職務経歴書</div>
     <div v-if="isSecrets" class="text-xl">機密要素あり</div>
     <div class="absolute right-0 bottom-0 text-sm">
@@ -16,7 +16,7 @@ const { loadedCareerTableSections, updatedAt, isSecrets } =
   </section>
   <section
     v-if="loadedCareerTableSections.length"
-    :class="`border-2 border-black ${isSecrets ? 'secret' : null}`"
+    :class="`career-section border-2 ${isSecrets ? 'secret' : ''}`"
   >
     <template v-for="(section, index) in loadedCareerTableSections">
       <CareerTableDocumentBody
