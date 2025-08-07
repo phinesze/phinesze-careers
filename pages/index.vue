@@ -10,5 +10,5 @@ useHead({
 </script>
 
 <template>
-  <CareerTable />
+  <CareerSection />
 </template>

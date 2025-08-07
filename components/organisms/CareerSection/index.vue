@@ -19,13 +19,13 @@ const { loadedCareerTableSections, updatedAt, isSecrets } =
     :class="`career-section border-2 ${isSecrets ? 'secret' : ''}`"
   >
     <template v-for="(section, index) in loadedCareerTableSections">
-      <CareerTableDocumentBody
+      <CareerSectionDocumentBody
         v-if="section.type === 'document'"
         :key="index"
         :markdown-text="section.detail"
         :label="section.label"
       />
-      <CareerTableProjectsGroupsBody
+      <CareerSectionProjectsGroupsBody
         v-if="section.type === 'project-groups'"
         :key="index"
         :groups="section.groups"

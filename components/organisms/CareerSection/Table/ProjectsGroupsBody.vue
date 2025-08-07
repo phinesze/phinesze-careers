@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ProjectGroup } from "~/types/ProjectGroup";
+import { ProjectGroup } from "~/types/ProjectGroup.ts";
 import { useCareerTableSections } from "~/composables/useCareerTableSections.ts";
 const { isSecrets } = useCareerTableSections();
 
