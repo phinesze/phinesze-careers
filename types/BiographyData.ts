@@ -1,9 +1,10 @@
-import { Section } from "~/types/Section.ts";
+import { DocumentSection } from "~/types/DocumentSection.ts";
+import { ProjectGroupSection } from "~/types/ProjectGroupSection.ts";
 
 /**
  * 経歴データのルート
  */
 export interface BiographyData {
   updatedAt: string;
-  sections: Section[];
+  sections: (DocumentSection | ProjectGroupSection)[];
 }
