@@ -11,7 +11,7 @@ onMounted(() => {
   setRootFontSize("2mm");
 });
 
-const { handleSelectFile, isSecrets } = useCareerTableSections();
+const { handleSelectFile, isSecrets, isTableView } = useCareerTableSections();
 
 const handlePrint = () => print();
 </script>
@@ -48,6 +48,16 @@ const handlePrint = () => print();
         "
       >
         {{ isSecrets ? "機密を含まない" : "機密を含む" }}
+      </button>
+      <button
+        class="inline-block border border-gray-200 h-16 px-5"
+        @click="
+          () => {
+            router.push({ query: { is_table: isTableView ? undefined : 1 } });
+          }
+        "
+      >
+        {{ isTableView ? "通常ビューに" : "テーブルビューに" }}
       </button>
     </footer>
   </div>

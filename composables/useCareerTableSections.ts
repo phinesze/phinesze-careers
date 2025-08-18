@@ -1,9 +1,15 @@
-import { ProjectGroupSection } from "~/types/ProjectGroupSection.ts";
 import { BiographyData } from "~/types/BiographyData.ts";
-import { Section } from "~/types/Section.ts";
+import { DocumentSection } from "~/types/DocumentSection.ts";
+import { ProjectGroupSection } from "~/types/ProjectGroupSection.ts";
 
-const loadedCareerTableSections = ref<Section[]>([]);
+const loadedCareerTableSections = ref<
+  (DocumentSection | ProjectGroupSection)[]
+>([]);
 const updatedAt = ref("");
+
+const isTableView = computed(() => {
+  return Boolean(useRoute().query.is_table);
+});
 
 const isSecrets = computed(() => {
   return Boolean(useRoute().query.is_secrets);
@@ -42,6 +48,7 @@ export const useCareerTableSections = () => {
   return {
     loadedCareerTableSections,
     updatedAt,
+    isTableView,
     isSecrets,
     projectGroupsOfSections,
     handleSelectFile,
