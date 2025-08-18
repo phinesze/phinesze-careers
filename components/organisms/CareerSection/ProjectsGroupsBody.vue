@@ -6,6 +6,8 @@ const { isSecrets } = useCareerTableSections();
 const props = defineProps<{
   groups: ProjectGroup[];
 }>();
+
+const index = 1;
 </script>
 
 <template>
@@ -31,7 +33,7 @@ const props = defineProps<{
             class="flex items-center border-r-2 h-full bg-lime-300 text-center"
           >
             <div class="text-center">
-              #{{ career.id }}
+              #{{ index++ }}
               <IntervalDateLabel v-if="career.times" :value="career.times" />
             </div>
           </div>
