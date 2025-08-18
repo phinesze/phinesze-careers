@@ -4,7 +4,6 @@ import { useCareerTableSections } from "~/composables/useCareerTableSections.ts"
 const { isSecrets } = useCareerTableSections();
 
 const props = defineProps<{
-  index: number;
   groups: ProjectGroup[];
 }>();
 </script>
