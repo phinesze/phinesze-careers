@@ -14,14 +14,14 @@ const props = defineProps<{
     :key="group.companyAlias"
   >
     <!-- 会社名 -->
-    <div class="bg-blue-100 border-t-2 p-2 font-bold break-after-avoid">
+    <div class="bg-blue-100 border-y p-2 font-bold break-after-avoid">
       {{ isSecrets ? group.company ?? group.companyAlias : group.companyAlias }}
     </div>
     <!-- 会社のプロジェクト -->
     <section
       v-for="career in group.projects"
       :key="career.id"
-      class="career-row break-inside-avoid border-t-2"
+      class="career-row break-inside-avoid border-t-[1px] border-b-[1px]"
     >
       <!-- 文章行部分 -->
       <div class="align-top flex p-0">

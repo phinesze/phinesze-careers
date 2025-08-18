@@ -6,7 +6,7 @@ defineProps<{
 </script>
 
 <template>
-  <section class="[&:not(:first-child)]:border-t-2">
+  <section class="[&:not(:first-child)]:border-t [&:not(:last-child)]:border-b">
     <!-- タイトル -->
     <div v-if="label" class="font-bold bg-gray-300 p-2">
       {{ label }}
