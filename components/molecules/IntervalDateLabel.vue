@@ -28,7 +28,7 @@ const yearCount = computed(() =>
     〜
     <DateLabel :value="value.end" />
     <div v-if="months">
-      {{ `(${yearCount ? `${yearCount}年` : ""}${months % 12}ヶ月)` }}
+      {{ `（約${yearCount ? `${yearCount}年` : ""}${months % 12}ヶ月）` }}
     </div>
     <div v-else>(進行中)</div>
   </div>
