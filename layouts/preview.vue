@@ -19,6 +19,7 @@ const handlePrint = () => print();
 <template>
   <div>
     <section class="w-[210mm] h-[297mm]">
+      preview
       <slot />
     </section>
     <footer
